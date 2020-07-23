@@ -45,18 +45,13 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.4.1"
   },
-  "browserslist": [
-    "last 2 Yandex Browser versions",      
-    "last 2 Chrome versions",      
-    "last 2 ChromeAndroid versions",      
-    "last 2 Firefox versions",      
-    "last 2 FirefoxAndroid versions",      
-    "last 2 Safari versions",      
-    "last 2 iOS versions",      
-    "last 2 Edge versions",      
-    "last 2 Opera versions",
+  "browserslist": [      
+    "> 1%",
+    "last 2 versions",
+    "Safari >= 11",
+    "iOS >= 11",
     "not IE 11",
     "not IE_Mob 11",
-    "maintained node versions"
+    "not dead"
   ]
 }
