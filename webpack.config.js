@@ -8,7 +8,9 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    main: './src/js/index.js',
+    './index/index': './src/js/index.js',
+    './about/about': './src/js/about.js',
+    './analytics/analytics': './src/js/analytics.js',
   },
   output: {
       path: path.resolve(__dirname, 'dist'),
@@ -54,23 +56,38 @@ module.exports = {
         {
           test: /\.(eot|ttf|woff|woff2)$/,
           loader: 'file-loader?name=./vendor/[name].[ext]'
-        }
+        },
       ]
     },
   plugins: [ 
-    new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
-              preset: ['default'],
+        preset: ['default'],
       },
       canPrint: true
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
+      chunks: ['./index/index'],
       filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/about.html',
+      chunks: ['./about/about'],
+      filename: 'about.html',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/analytics.html',
+      chunks: ['./analytics/analytics'],
+      filename: 'analytics.html',
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
