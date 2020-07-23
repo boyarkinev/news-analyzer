@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description" content="NewsAnalyzer - сервис поиска новостей по ключевому слову или фразе с аналитикой по частоте публикаций."/>
+  <meta name="author" content="Бояркин Евгений>">
+  <title>NewsAnalyser. About</title>
+  <link rel="shortcut icon" href="<%=require('./images/favico.svg').default%>">
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+  <script defer type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+</head>
+<body>
+  <div class="root">
+    <header class="header root_section">
+      <p class="logo">NewsAnalyser</p>
+      <nav class="navigation">
+        <ul>
+          <li><a href="./index.html">Главная</a></li>
+          <li><a href="./about.html">О проекте</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main root__section">
+      <section class="about__project main__section">
+        <h2 class="section__header">Клиентам</h2>
+        <p class="section__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
+        <p class="section__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
+        <p class="section__text">Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.</p>
+        <p class="section__text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
+        <p class="section__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
+      </section>
+      <section class="stack main__section main__section_colored">
+        <div class="stack__items">
+          <h2 class="section__header">Используемые технологии</h2>
+          <figure class="stack__item">
+            <figcaption>HTML</figcaption>
+            <img src="<%=require('./images/html5.svg').default%>" alt="HTML5 Logo" class="stack__logo">
+          </figure>
+          <figure class="stack__item">
+            <figcaption>CSS</figcaption>
+            <img src="<%=require('./images/css3.svg').default%>" alt="CSS3 Logo" class="stack__logo">
+          </figure>
+          <figure class="stack__item">
+            <figcaption>Java Script</figcaption>
+            <img src="<%=require('./images/js.svg').default%>" alt="Java Script Logo" class="stack__logo">
+          </figure>
+          <figure class="stack__item">
+            <figcaption>Webpack</figcaption>
+            <img src="<%=require('./images/webpack.svg').default%>" alt="Webpack Logo" class="stack__logo">
+          </figure>
+        </div>
+      </section>
+      <section class="author main__section">
+        <img src="<%=require('./images/author.jpg').default%>" alt="фото: Евгений Бояркин" class="author_pic">
+        <h2 class="section__header">Об авторе</h2>
+        <p class="section__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+        <p class="section__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+        <p class="section__text">Если хотите, оставьте свои контакты: email и телефон. Так заказчики смогут с вами связаться.</p>
+      </section>
+      <section class="githib-commits main__section main__section_colored">
+
+      </section>
+    </main>
+    <footer class="footer root__section">
+      <p class="copyright">© 2020 Евгений Бояркин</p>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Главная</a></li>
+          <li><a href="./about.html">О проекте</a></li>
+          <li><a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+        </ul>
+      </nav>
+      <div class="social">
+        <img src="<%=require('./images/github.svg').default%>" alt="">
+        <img src="<%=require('./images/fb.svg').default%>" alt="">
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
