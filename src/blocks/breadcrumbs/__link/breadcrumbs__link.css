@@ -1,0 +1,13 @@
+.breadcrumbs__link {
+  font-family: 'Roboto';
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .3s;
+  margin: 0;
+}
+
+.breadcrumbs__link:hover {
+  opacity: .5;
+}

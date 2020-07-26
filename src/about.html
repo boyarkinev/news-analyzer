@@ -8,21 +8,34 @@
   <title>NewsAnalyser. About</title>
   <link rel="shortcut icon" href="<%=require('./images/favico.svg').default%>">
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
-  <script defer type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script defer src="<%= htmlWebpackPlugin.files.js %>"></script>
 </head>
 <body>
   <div class="root">
-    <header class="header root_section">
-      <p class="logo">NewsAnalyser</p>
-      <nav class="navigation">
-        <ul>
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">О проекте</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main root__section">
-      <section class="about__project main__section">
+    <header class="header">
+
+      <!-- Навигация по сайту/ -->
+      <div class="navigation container">
+        <p class="logo ">NewsAnalyser</p>
+        <nav>
+          <ul class="navigation__items">
+            <li class="navigation__item">
+              <a href="./index.html" class="navigation__link">Главная</a>
+            </li>
+            <li class="navigation__item">
+              <a href="./about.html" class="navigation__link navigation__link_active">О&nbsp;проекте</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /Навигация по сайту -->
+
+      <div class="selector"></div>
+  </header>
+    <main class="main">
+
+      <!-- О проекте/ -->
+      <section class="about__project main__section container">
         <h2 class="section__header">Клиентам</h2>
         <p class="section__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
         <p class="section__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
@@ -30,51 +43,84 @@
         <p class="section__text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
         <p class="section__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
       </section>
+      <!-- /О проекте -->
+
+      <!-- Стэк технолигий/ -->
       <section class="stack main__section main__section_colored">
-        <div class="stack__items">
+        <div class="stack__container container">
           <h2 class="section__header">Используемые технологии</h2>
-          <figure class="stack__item">
-            <figcaption>HTML</figcaption>
-            <img src="<%=require('./images/html5.svg').default%>" alt="HTML5 Logo" class="stack__logo">
-          </figure>
-          <figure class="stack__item">
-            <figcaption>CSS</figcaption>
-            <img src="<%=require('./images/css3.svg').default%>" alt="CSS3 Logo" class="stack__logo">
-          </figure>
-          <figure class="stack__item">
-            <figcaption>Java Script</figcaption>
-            <img src="<%=require('./images/js.svg').default%>" alt="Java Script Logo" class="stack__logo">
-          </figure>
-          <figure class="stack__item">
-            <figcaption>Webpack</figcaption>
-            <img src="<%=require('./images/webpack.svg').default%>" alt="Webpack Logo" class="stack__logo">
-          </figure>
+          <div class="stack__items">
+            <figure class="stack__item">
+              <figcaption class="stack__name">HTML</figcaption>
+              <img src="<%=require('./images/html5.svg').default%>" alt="HTML5 Logo" title="HTML5" class="stack__logo">
+            </figure>
+            <figure class="stack__item">
+              <figcaption class="stack__name">CSS</figcaption>
+              <img src="<%=require('./images/css3.svg').default%>" alt="CSS3 Logo" title="CSS3" class="stack__logo">
+            </figure>
+            <figure class="stack__item">
+              <figcaption class="stack__name">Java&nbsp;Script</figcaption>
+              <img src="<%=require('./images/js.svg').default%>" alt="Java Script Logo" title="Java Script" class="stack__logo">
+            </figure>
+            <figure class="stack__item">
+              <figcaption class="stack__name">Webpack</figcaption>
+              <img src="<%=require('./images/webpack.svg').default%>" alt="Webpack Logo" title="Webpack" class="stack__logo">
+            </figure>
+          </div>
         </div>
       </section>
-      <section class="author main__section">
-        <img src="<%=require('./images/author.jpg').default%>" alt="фото: Евгений Бояркин" class="author_pic">
-        <h2 class="section__header">Об авторе</h2>
-        <p class="section__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="section__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
-        <p class="section__text">Если хотите, оставьте свои контакты: email и телефон. Так заказчики смогут с вами связаться.</p>
-      </section>
-      <section class="githib-commits main__section main__section_colored">
+      <!-- /Стэк технолигий -->
 
+      <!-- Секция об авторе/ -->
+      <section class="author main__section container">
+        <img src="<%=require('./images/author_about.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="author__pic">
+        <div class="author__paragraph">
+          <h2 class="section__header">Об авторе</h2>
+          <p class="section__text">
+            В своей жизни я овладел навыками дизайнера, верстальщика, видеографа и немного фотографа. Эти профессии требуют творческого подхода и понимания визуального равновесия. И конечно я использую свои знания во frontend-разработке. Они помогают мне мыслить шире.
+          </p>
+          <p class="section__text">
+            Большой плюс Яндекс.Практикума в том, что здесь учишься решать разнообразные задачи на современных, актуальных в данный момент технологиях.
+          </p>
+        </div>
       </section>
+      <!-- /Секция об авторе -->
+
+      <!-- Коммиты на гитхабе/ -->
+      <section class="githib-commits main__section main__section_colored">
+      </section>
+      <!-- /Коммиты на гитхабе -->
+
     </main>
-    <footer class="footer root__section">
-      <p class="copyright">© 2020 Евгений Бояркин</p>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">О проекте</a></li>
-          <li><a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+    <footer class="footer container">
+      <p class="footer__copyright">© 2020 Евгений Бояркин</p>
+
+      <!-- Навигация по сайту/ -->
+      <nav class="navigation">
+        <ul class="navigation__items">
+          <li class="navigation__item">
+            <a href="./index.html" class="navigation__link">Главная</a>
+          </li>
+          <li class="navigation__item">
+            <a href="./about.html" class="navigation__link">О проекте</a>
+          </li>
+          <li class="navigation__item">
+            <a href="https://praktikum.yandex.ru/" class="navigation__link" target="_blank">Яндекс.Практикум</a>
+          </li>
         </ul>
       </nav>
-      <div class="social">
-        <img src="<%=require('./images/github.svg').default%>" alt="">
-        <img src="<%=require('./images/fb.svg').default%>" alt="">
-      </div>
+      <!-- /Навигация по сайту -->
+
+      <!-- Ссылки на соцсети/ -->
+      <ul class="social">
+        <li class="social__item">
+          <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank"></a>
+        </li>
+        <li class="social__item">
+          <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank"></a>
+        </li>
+      </ul>
+      <!-- /Ссылки на соцсети -->
     </footer>
   </div>
 </body>

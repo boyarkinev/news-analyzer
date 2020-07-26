@@ -1,0 +1,7 @@
+.navigation__item {
+  margin-right: 40px;
+}
+
+.navigation__item:last-of-type {
+  margin-right: 0;
+}

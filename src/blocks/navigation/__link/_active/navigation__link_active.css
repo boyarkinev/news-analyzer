@@ -1,0 +1,6 @@
+.navigation__link_active {
+  padding-bottom: 28px;
+  border-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+}

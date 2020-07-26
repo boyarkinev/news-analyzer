@@ -1,0 +1,6 @@
+.stack__items {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 40px;
+  align-items: center;
+}

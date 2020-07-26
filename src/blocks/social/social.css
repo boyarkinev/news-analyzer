@@ -1,0 +1,7 @@
+@import url(./__ico/social__ico.css);
+@import url(./__item/social__item.css);
+
+.social {
+  display: flex;
+  list-style-type: none;
+}

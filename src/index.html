@@ -8,52 +8,107 @@
   <title>NewsAnalyzer</title>
   <link rel="shortcut icon" href="<%=require('./images/favico.svg').default%>">
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
-  <script defer type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script defer src="<%= htmlWebpackPlugin.files.js %>"></script>
 </head>
 <body>
   <div class="root">
-    <header class="header root_section">
-      <p class="logo">NewsAnalyser</p>
-      <nav class="navigation">
-        <ul>
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">О проекте</a></li>
-        </ul>
-      </nav>
-      <div class="search">
-        <h1 class="header">Что в мире творится?</h1>
-        <p class="section__text section__text_light">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-        <form class="search__elements">
-          <input type="text" class="search_input" placeholder="Введите тему новости">
-          <button type="submit" class="search_button">Искать</button>
-        </form>
-      </div>
-    </header>
-    <main class="main root__section">
-      <section class="search-results main__section main__section_colored">
+    <header class="header header_background header_white-txt">
 
+      <!-- Навигация по сайту/ -->
+      <div class="navigation container">
+        <p class="logo ">NewsAnalyser</p>
+        <nav>
+          <ul class="navigation__items">
+            <li class="navigation__item">
+              <a href="./index.html" class="navigation__link navigation__link_header navigation__link_active">Главная</a>
+            </li>
+            <li class="navigation__item">
+              <a href="./about.html" class="navigation__link navigation__link_header">О&nbsp;проекте</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /Навигация по сайту -->
+
+      <div class="selector"></div>
+
+      <!-- Поисковая форма/ -->
+      <div class="search">
+        <div class="search__container">
+          <h1 class="main-header">Что в мире творится?</h1>
+          <p class="section__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
+          <form class="search__elements">
+            <input type="text" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30">
+            <button type="submit" class="search__button">Искать</button>
+          </form>
+        </div>
+      </div>
+      <!-- /Поисковая форма -->
+      
+    </header>
+    
+    <main class="main">
+
+      <!-- Прелоадер/ -->
+      <section class="search-results main__section main__section_colored">
+        <h2 class="container">Бла-бла</h2>
       </section>
-      <section class="author main__section">
-        <img src="<%=require('./images/author.jpg').default%>" alt="фото: Евгений Бояркин" class="author_pic">
-        <h2 class="section__header">Об авторе</h2>
-        <p class="section__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="section__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+      <!-- /Прелоадер -->
+
+      <!-- Секция об авторе/ -->
+      <section class="author main__section container">
+        <img src="<%=require('./images/author.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="author__pic">
+        <div class="author__paragraph">
+          <h2 class="section__header">Об авторе</h2>
+          <p class="section__text section__text_linespacing-double">
+            Привет!
+          </p>
+          <p class="section__text section__text_linespacing-double">
+            Меня зовут Евгений Бояркин, и это мой дипломный проект в рамках обучения на образовательной платформе Яндекс.Практикум.
+          </p>
+          <p class="section__text section__text_linespacing-double">
+            Здесь я применяю навыки HTML и CSS верстки, использую JavaScript для управления элементами, обращению к API и получению данных с сервера. Проект собран при помощи библиотек Webpack и размещен на GitHub.
+          </p>
+          <p class="section__text section__text_linespacing-double">
+            В течение семи месяцев я осваивал профессию frontend-разработчика. Разбирался в кроссбраузерной семантической верстке, адаптивном дизайне, объектно-ориентированном программировании. Учился понимать язык браузеров и делать код красивым. И для меня важна не только внешняя красота, но и внутренняя эстетика!
+          </p>
+        </div>
       </section>
+      <!-- /Секция об авторе -->
+
     </main>
-    <footer class="footer root__section">
-      <p class="copyright">© 2020 Евгений Бояркин</p>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">О проекте</a></li>
-          <li><a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
+
+    <footer class="footer container">
+      <p class="footer__copyright">© 2020 Евгений Бояркин</p>
+
+      <!-- Навигация по сайту/ -->
+      <nav class="navigation">
+        <ul class="navigation__items">
+          <li class="navigation__item">
+            <a href="./index.html" class="navigation__link">Главная</a>
+          </li>
+          <li class="navigation__item">
+            <a href="./about.html" class="navigation__link">О проекте</a>
+          </li>
+          <li class="navigation__item">
+            <a href="https://praktikum.yandex.ru/" class="navigation__link" target="_blank">Яндекс.Практикум</a>
+          </li>
         </ul>
       </nav>
-      <div class="social">
-        <img src="<%=require('./images/github.svg').default%>" alt="">
-        <img src="<%=require('./images/fb.svg').default%>" alt="">
-      </div>
+      <!-- /Навигация по сайту -->
+
+      <!-- Ссылки на соцсети/ -->
+      <ul class="social">
+        <li class="social__item">
+          <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank"></a>
+        </li>
+        <li class="social__item">
+          <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank"></a>
+        </li>
+      </ul>
+      <!-- /Ссылки на соцсети -->
     </footer>
+    
   </div>
 </body>
 </html>

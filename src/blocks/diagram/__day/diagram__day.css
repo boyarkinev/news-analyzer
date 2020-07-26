@@ -1,0 +1,4 @@
+.diagram__day {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+}

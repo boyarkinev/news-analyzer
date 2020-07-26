@@ -1,0 +1,8 @@
+.selector {
+  border-top: 1px;
+  border-top-color: inherit;
+  border-top-style: solid;
+  opacity: .5;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,8 @@
+@import url(./__pic/author__pic.css);
+@import url(./__paragraph/author__paragraph.css);
+
+.author {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}

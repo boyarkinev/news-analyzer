@@ -8,89 +8,161 @@
   <title>NewsAnalyser. Analytics</title>
   <link rel="shortcut icon" href="<%=require('./images/favico.svg').default%>">
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
-  <script defer type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script defer src="<%= htmlWebpackPlugin.files.js %>"></script>
 </head>
 <body>
   <div class="root">
-    <header class="header root_section">
-      <p class="logo">NewsAnalyser</p>
-      <nav class="navigation">
-        <ul>
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">О проекте</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main root__section">
-      <section class="result main__section">
-        <p class="section__text"><a href="./index.html" class="link">Главная</a> / Аналитика</p>
-        <h2 class="section__header">Вы спросили: «Путешествия»</h2>
-        <p class="section__text">Новостей за неделю: 34 324</p>
-        <p class="section__text">Упоминаний в загаловках: 235</p>
-      </section>
-      <section class="diagram main__section main__section_colored">
-        <h3 class="diagram__header">Аналитика по дням</h3>
-        <div class="diagram__table-header">
-          <p class="diagram__text">Дата (август)</p>
-          <p class="diagram__text">Кол-во упоминаний</p>
-        </div>
-        <ul class="diagram__scale">
-          <li>0</li>
-          <li>25</li>
-          <li>50</li>
-          <li>75</li>
-          <li>100</li>
-        </ul>
-        <div class="diagram__table">
-          <p class="diagram__date">19, пн</p>
-          <div class="diagram__line"></div>
-        </div>
-        <div class="diagram__table">
-          <p class="diagram__date">20, вт</p>
-          <div class="diagram__line"></div>
-        </div>
-        <div class="diagram__table">
-          <p class="diagram__date">21, ср</p>
-          <div class="diagram__line"></div>
-        </div>
-        <div class="diagram__table">
-          <p class="diagram__date">22, чт</p>
-          <div class="diagram__line"></div>
-        </div>
-        <div class="diagram__table">
-          <p class="diagram__date">23, пт</p>
-          <div class="diagram__line"></div>
-        </div>
-        <div class="diagram__table">
-          <p class="diagram__date">24, сб</p>
-          <div class="diagram__line"></div>
-        </div>
-        <div class="diagram__table">
-          <p class="diagram__date">25, св</p>
-          <div class="diagram__line"></div>
-        </div>
-        <ul class="diagram__scale">
-          <li>0</li>
-          <li>25</li>
-          <li>50</li>
-          <li>75</li>
-          <li>100</li>
-        </ul>
-      </section>
-    </main>
-    <footer class="footer root__section">
-      <p class="copyright">© 2020 Евгений Бояркин</p>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">О проекте</a></li>
-          <li><a href="https://praktikum.yandex.ru/">Яндекс.Практикум</a></li>
-        </ul>
-      </nav>
-      <div class="social">
-        <img src="<%=require('./images/github.svg').default%>" alt="">
-        <img src="<%=require('./images/fb.svg').default%>" alt="">
+    <header class="header">
+
+      <!-- Навигация по сайту/ -->
+      <div class="navigation container">
+        <p class="logo ">NewsAnalyser</p>
+        <nav>
+          <ul class="navigation__items">
+            <li class="navigation__item">
+              <a href="./index.html" class="navigation__link">Главная</a>
+            </li>
+            <li class="navigation__item">
+              <a href="./about.html" class="navigation__link">О&nbsp;проекте</a>
+            </li>
+          </ul>
+        </nav>
       </div>
+      <!-- /Навигация по сайту -->
+
+      <div class="selector"></div>
+
+      <!-- Хлебные крошки/ -->
+      <div class="breadcrumbs container">
+        <ol itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs__items">
+          <li itemprop="itemListElement" itemscope 
+              itemtype="http://schema.org/ListItem" class="breadcrumbs__item">
+            <a itemprop="item" href="https://github.com/boyarkinev/news-analyzer" class="breadcrumbs__link"><span itemprop="name">Главная</span></a>
+            <meta itemprop="position" content="1">
+          </li>
+          <li itemprop="itemListElement" itemscope
+              itemtype="http://schema.org/ListItem" class="">
+            <span itemprop="name" class="breadcrumbs__link breadcrumbs__link_off">Аналитика</span>
+            <meta itemprop="item" content="https://github.com/boyarkinev/analytics.html" />
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </div>
+      <!-- /Хлебные крошки -->
+
+  </header>
+
+    <main class="main">
+
+      <!-- Результаты поиска/ -->
+      <section class="result main__section container">
+        <h2 class="section__header">Вы спросили: «Путешествия»</h2>
+        <p class="result__text">Новостей за неделю: <strong>34 324</strong></p>
+        <p class="result__text">Упоминаний в загаловках: <strong>235</strong></p>
+      </section>
+      <!-- /Результаты поиска -->
+
+      <!-- Диаграмма/ -->
+      <section class="diagram main__section main__section_colored">
+        <div class="diagram__container">
+          <h3 class="diagram__header">Аналитика по дням</h3>
+          <div class="diagram__columns">
+            <p class="diagram__column-header">Дата <span>(август)</span></p>
+            <p class="diagram__column-header">Кол-во упоминаний</p>
+          </div>
+          <div class="selector"></div>
+          <ol class="diagram__scale">
+            <li class="diagram__column-header">0</li>
+            <li class="diagram__column-header">25</li>
+            <li class="diagram__column-header">50</li>
+            <li class="diagram__column-header">75</li>
+            <li class="diagram__column-header">100</li>
+          </ol>
+          <ol class="diagram__days">
+            <li class="diagram__day">
+              <p class="diagram__date">19, пн</p>
+              <figure class="diagram__line" style="width: 15%">
+                <figcaption class="diagram__percent">15</figcaption>
+              </figure>
+            </li>
+            <li class="diagram__day">
+              <p class="diagram__date">20, вт</p>
+              <figure class="diagram__line" style="width: 18%">
+                <figcaption class="diagram__percent">18</figcaption>
+              </figure>
+            </li>
+            <li class="diagram__day">
+              <p class="diagram__date">21, ср</p>
+              <figure class="diagram__line" style="width: 11%">
+                <figcaption class="diagram__percent">11</figcaption>
+              </figure>
+            </li>
+            <li class="diagram__day">
+              <p class="diagram__date">22, чт</p>
+              <figure class="diagram__line" style="width: 39%">
+                <figcaption class="diagram__percent">39</figcaption>
+              </figure>
+            </li>
+            <li class="diagram__day">
+              <p class="diagram__date">23, пт</p>
+              <figure class="diagram__line" style="width: 45%">
+                <figcaption class="diagram__percent">45</figcaption>
+              </figure>
+            </li>
+            <li class="diagram__day">
+              <p class="diagram__date">24, сб</p>
+              <figure class="diagram__line" style="width: 73%">
+                <figcaption class="diagram__percent">73</figcaption>
+              </figure>
+            </li>
+            <li class="diagram__day">
+              <p class="diagram__date">25, вс</p>
+              <figure class="diagram__line" style="width: 34%">
+                <figcaption class="diagram__percent">34</figcaption>
+              </figure>
+            </li>
+          </ol>
+          <ul class="diagram__scale">
+            <li class="diagram__column-header">0</li>
+            <li class="diagram__column-header">25</li>
+            <li class="diagram__column-header">50</li>
+            <li class="diagram__column-header">75</li>
+            <li class="diagram__column-header">100</li>
+          </ul>
+        </div>
+      </section>
+      <!-- /Диаграмма -->
+    </main>
+
+    <footer class="footer container">
+      <p class="footer__copyright">© 2020 Евгений Бояркин</p>
+
+      <!-- Навигация по сайту/ -->
+      <nav class="navigation">
+        <ul class="navigation__items">
+          <li class="navigation__item">
+            <a href="./index.html" class="navigation__link">Главная</a>
+          </li>
+          <li class="navigation__item">
+            <a href="./about.html" class="navigation__link">О проекте</a>
+          </li>
+          <li class="navigation__item">
+            <a href="https://praktikum.yandex.ru/" class="navigation__link" target="_blank">Яндекс.Практикум</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /Навигация по сайту -->
+
+      <!-- Ссылки на соцсети/ -->
+      <ul class="social">
+        <li class="social__item">
+          <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank"></a>
+        </li>
+        <li class="social__item">
+          <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank"></a>
+        </li>
+      </ul>
+      <!-- /Ссылки на соцсети -->
     </footer>
   </div>
 </body>

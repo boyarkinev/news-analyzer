@@ -1,0 +1,15 @@
+@import url(./_active/navigation__link_active.css);
+@import url(./_header/navigation__link_header.css);
+
+.navigation__link {
+  font-family: 'Roboto';
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .3s;
+}
+
+.navigation__link:hover {
+  opacity: .5;
+}

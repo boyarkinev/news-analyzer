@@ -1,0 +1,12 @@
+.section__text {
+  font-family: 'Roboto';
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 815px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.section__text:last-child {
+  margin: 0;
+}

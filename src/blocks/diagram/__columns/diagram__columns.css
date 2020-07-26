@@ -1,0 +1,5 @@
+.diagram__columns {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  column-gap: 44px;
+}
