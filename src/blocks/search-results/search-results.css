@@ -1,0 +1,10 @@
+@import url(./__container/search-results__container.css);
+@import url(./__preloader/search-results__preloader.css);
+@import url(./__negative-pic/search-results__negative-pic.css);
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+}

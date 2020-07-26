@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="root">
-    <header class="header header_background header_white-txt">
+    <header class="header header_background header_white-text">
 
       <!-- Навигация по сайту/ -->
       <div class="navigation container">
@@ -35,7 +35,7 @@
       <!-- Поисковая форма/ -->
       <div class="search">
         <div class="search__container">
-          <h1 class="main-header">Что в мире творится?</h1>
+          <h1 class="main-title">Что в мире творится?</h1>
           <p class="section__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
           <form class="search__elements">
             <input type="text" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30">
@@ -49,17 +49,26 @@
     
     <main class="main">
 
-      <!-- Прелоадер/ -->
+      <!-- Результат поиска/ -->
       <section class="search-results main__section main__section_colored">
-        <h2 class="container">Бла-бла</h2>
+        <div class="search-results__container">
+          <i class="search-results__preloader"></i>
+          <p class="component__subtitle">Идет поиск новостей...</p>
+        </div>
+        <!-- Компоненты этой секции не будут выводиться на страницу одновременно. Верхний и нижний отступы заданы всей секции -->
+        <div class="search-results__container">
+          <figure class="search-results__negative-pic"></figure>
+          <h3 class="component__title">Ничего не найдено</h3>
+          <p class="component__subtitle">К сожалению, по вашему запросу ничего не найдено.</p>
+        </div>
       </section>
-      <!-- /Прелоадер -->
+      <!-- /Результат поиска -->
 
       <!-- Секция об авторе/ -->
       <section class="author main__section container">
         <img src="<%=require('./images/author.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="author__pic">
         <div class="author__paragraph">
-          <h2 class="section__header">Об авторе</h2>
+          <h2 class="section__title">Об авторе</h2>
           <p class="section__text section__text_linespacing-double">
             Привет!
           </p>
@@ -67,7 +76,7 @@
             Меня зовут Евгений Бояркин, и это мой дипломный проект в рамках обучения на образовательной платформе Яндекс.Практикум.
           </p>
           <p class="section__text section__text_linespacing-double">
-            Здесь я применяю навыки HTML и CSS верстки, использую JavaScript для управления элементами, обращению к API и получению данных с сервера. Проект собран при помощи библиотек Webpack и размещен на GitHub.
+            Здесь я применяю навыки HTML и CSS верстки, использую JavaScript для управления элементами, обращаюсь к API и получаю данных с сервера. Проект собран при помощи библиотек Webpack и размещен на GitHub.
           </p>
           <p class="section__text section__text_linespacing-double">
             В течение семи месяцев я осваивал профессию frontend-разработчика. Разбирался в кроссбраузерной семантической верстке, адаптивном дизайне, объектно-ориентированном программировании. Учился понимать язык браузеров и делать код красивым. И для меня важна не только внешняя красота, но и внутренняя эстетика!
