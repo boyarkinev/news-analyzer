@@ -1,7 +1,7 @@
 .diagram__column-title {
   font-family: 'Roboto';
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 12px;
+  line-height: 16px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #b6bcbf;

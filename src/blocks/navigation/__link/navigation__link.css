@@ -3,13 +3,13 @@
 
 .navigation__link {
   font-family: 'Roboto';
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: 18px;
+  line-height: 24px;
   text-decoration: none;
   color: inherit;
-  transition: opacity .3s;
+  transition: color .3s;
 }
 
 .navigation__link:hover {
-  opacity: .5;
+  color: #b6bcbf;
 }

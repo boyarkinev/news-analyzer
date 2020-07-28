@@ -1,0 +1,26 @@
+@import url(./__cover/news-card__cover.css);
+@import url(./__description/news-card__description.css);
+@import url(./__date/news-card__date.css);
+@import url(./__text/news-card__text.css);
+@import url(./__title/news-card__title.css);
+@import url(./__source/news-card__source.css);
+@import url(./__paragraph/news-card__paragraph.css);
+
+.news-card {
+  max-width: 400px;
+  min-height: 576px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 16px;
+  background-color: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: box-shadow .3s;
+}
+
+.news-card:hover {
+  box-shadow: 0 0 58px rgba(8, 29, 45, 0.1);
+}

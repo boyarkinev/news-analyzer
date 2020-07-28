@@ -1,6 +1,7 @@
 .section__title {
-  font-size: 2.5rem;
-  line-height: 2.875rem;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: normal;
   margin-top: 0;
   margin-bottom: 26px;
 }

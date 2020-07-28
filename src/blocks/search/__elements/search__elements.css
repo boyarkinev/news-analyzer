@@ -1,7 +1,7 @@
 .search__elements {
   display: flex;
-  justify-content: space-between;
-  font-family: 'Roboto';
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
   margin-top: 40px;
 }

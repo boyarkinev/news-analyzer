@@ -1,0 +1,21 @@
+.button_white {
+  padding-left: 84px;
+  padding-right: 84px;
+  background-color: #fff;
+  margin-top: 64px;
+}
+
+.button_white:hover {
+  background-color: #347eff;
+  color: #fff;
+}
+
+.button_white:active {
+  background-color: #2a65cc;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.button_white:focus {
+  box-shadow: 0 0 3px #2f71e5;
+}

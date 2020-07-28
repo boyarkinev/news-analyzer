@@ -1,0 +1,4 @@
+.news-card__paragraph {
+  display: flex;
+  flex-direction: column;
+}

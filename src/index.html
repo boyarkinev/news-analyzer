@@ -15,7 +15,7 @@
     <header class="header header_background header_white-text">
 
       <!-- Навигация по сайту/ -->
-      <div class="navigation container">
+      <div class="navigation container container_centered">
         <p class="logo ">NewsAnalyser</p>
         <nav>
           <ul class="navigation__items">
@@ -39,7 +39,7 @@
           <p class="section__text">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
           <form class="search__elements">
             <input type="text" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30">
-            <button type="submit" class="search__button">Искать</button>
+            <button type="submit" class="button button_blue">Искать</button>
           </form>
         </div>
       </div>
@@ -51,23 +51,103 @@
 
       <!-- Результат поиска/ -->
       <section class="search-results main__section main__section_colored">
-        <div class="search-results__container">
+        <!-- <div class="search-results__container">
           <i class="search-results__preloader"></i>
-          <p class="component__subtitle">Идет поиск новостей...</p>
-        </div>
+          <p class="search-results__text">Идет поиск новостей...</p>
+        </div> -->
         <!-- Компоненты этой секции не будут выводиться на страницу одновременно. Верхний и нижний отступы заданы всей секции -->
-        <div class="search-results__container">
+        <!-- <div class="search-results__container">
           <figure class="search-results__negative-pic"></figure>
-          <h3 class="component__title">Ничего не найдено</h3>
-          <p class="component__subtitle">К сожалению, по вашему запросу ничего не найдено.</p>
+          <h3 class="search-results__title">Ничего не найдено</h3>
+          <p class="search-results__text">К сожалению, по вашему запросу ничего не найдено.</p>
+        </div> -->
+        <div class="search-results__container container container_centered">
+          <div class="section__header">
+            <h3 class="section__title">Результаты поиска</h3>
+            <form action="./analytics.html" class="search-results__submit">
+              <button type="submit" class="search-result__button section__link">
+                Посмотреть аналитику
+                <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5856 12.0001L8.29274 17.293L9.70696 18.7072L16.4141 12.0001L9.70696 5.29297L8.29274 6.70718L13.5856 12.0001Z' fill='%231A1B22'/%3E%3C/svg%3E%0A" alt="Стрелка">
+              </button>
+            </form>
+          </div>
+          <div class="search-results__list">
+            <a href="" class="news-card">
+              <img src="<%=require('./images/image_08.jpg').default%>" alt="Обложка"  class="news-card__cover">
+              <div class="news-card__description">
+                <p class="news-card__date">2 августа, 2019</p>
+                <div class="news-card__paragraph">
+                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+                </div>
+                <p class="news-card__source">Лента.ру</p>
+              </div>
+            </a>
+            <a href="" class="news-card">
+              <img src="<%=require('./images/image_04.jpg').default%>" alt="Обложка"  class="news-card__cover">
+              <div class="news-card__description">
+                <p class="news-card__date">2 августа, 2019</p>
+                <div class="news-card__paragraph">
+                  <h3 class="news-card__title">Лесные огоньки: история одной фотографии</h3>
+                  <p class="news-card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+                </div>
+                <p class="news-card__source">Медуза</p>
+              </div>
+            </a>
+            <a href="" class="news-card">
+              <img src="<%=require('./images/image_07.jpg').default%>" alt="Обложка"  class="news-card__cover">
+              <div class="news-card__description">
+                <p class="news-card__date">2 августа, 2019</p>
+                <div class="news-card__paragraph">
+                  <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                  <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                </div>
+                <p class="news-card__source">РИА</p>
+              </div>
+            </a>
+            <a href="" class="news-card">
+              <img src="<%=require('./images/image_06.jpg').default%>" alt="Обложка"  class="news-card__cover">
+              <div class="news-card__description">
+                <p class="news-card__date">2 августа, 2019</p>
+                <div class="news-card__paragraph">
+                  <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                  <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                </div>
+                <p class="news-card__source">Дзен</p>
+              </div>
+            </a>
+            <a href="" class="news-card">
+              <img src="<%=require('./images/image_01.jpg').default%>" alt="Обложка"  class="news-card__cover">
+              <div class="news-card__description">
+                <p class="news-card__date">2 августа, 2019</p>
+                <div class="news-card__paragraph">
+                  <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                  <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                </div>
+                <p class="news-card__source">Афиша</p>
+              </div>
+            </a>
+            <a href="" class="news-card">
+              <img src="<%=require('./images/image_05.jpg').default%>" alt="Обложка"  class="news-card__cover">
+              <div class="news-card__description">
+                <p class="news-card__date">2 августа, 2019</p>
+                <div class="news-card__paragraph">
+                  <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                  <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                </div>
+                <p class="news-card__source">Медиазона</p>
+              </div>
+            </a>
+          </div>
+          <button type="submit" class="button button_white">Показать еще</button>
         </div>
       </section>
       <!-- /Результат поиска -->
 
       <!-- Секция об авторе/ -->
-      <section class="author main__section container">
-        <img src="<%=require('./images/author.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="author__pic">
-        <div class="author__paragraph">
+      <section class="info main__section container container_left-shift">
+        <img src="<%=require('./images/author.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="info__pic">
+        <div class="info__paragraph">
           <h2 class="section__title">Об авторе</h2>
           <p class="section__text section__text_linespacing-double">
             Привет!
@@ -87,7 +167,7 @@
 
     </main>
 
-    <footer class="footer container">
+    <footer class="footer container container_centered">
       <p class="footer__copyright">© 2020 Евгений Бояркин</p>
 
       <!-- Навигация по сайту/ -->
@@ -97,7 +177,7 @@
             <a href="./index.html" class="navigation__link">Главная</a>
           </li>
           <li class="navigation__item">
-            <a href="./about.html" class="navigation__link">О проекте</a>
+            <a href="./about.html" class="navigation__link">О&nbsp;проекте</a>
           </li>
           <li class="navigation__item">
             <a href="https://praktikum.yandex.ru/" class="navigation__link" target="_blank">Яндекс.Практикум</a>

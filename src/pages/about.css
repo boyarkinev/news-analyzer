@@ -10,6 +10,5 @@
 @import url(../blocks/main/main.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/social/social.css);
-@import url(../blocks/author/author.css);
+@import url(../blocks/info/info.css);
 @import url(../blocks/stack/stack.css);
-@import url(../blocks/component/component.css);

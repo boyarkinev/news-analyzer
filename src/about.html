@@ -15,15 +15,15 @@
     <header class="header">
 
       <!-- Навигация по сайту/ -->
-      <div class="navigation container">
+      <div class="navigation container container_centered">
         <p class="logo ">NewsAnalyser</p>
         <nav>
           <ul class="navigation__items">
             <li class="navigation__item">
-              <a href="./index.html" class="navigation__link">Главная</a>
+              <a href="./index.html" class="navigation__link navigation__link_header">Главная</a>
             </li>
             <li class="navigation__item">
-              <a href="./about.html" class="navigation__link navigation__link_active">О&nbsp;проекте</a>
+              <a href="./about.html" class="navigation__link navigation__link_header navigation__link_active">О&nbsp;проекте</a>
             </li>
           </ul>
         </nav>
@@ -35,19 +35,21 @@
     <main class="main">
 
       <!-- О проекте/ -->
-      <section class="about__project main__section container">
-        <h2 class="section__title">Клиентам</h2>
-        <p class="section__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
-        <p class="section__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
-        <p class="section__text">Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.</p>
-        <p class="section__text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
-        <p class="section__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
+      <section class="info main__section container container_centered">
+        <div class="info__paragraph">
+          <h2 class="section__title">Клиентам</h2>
+          <p class="section__text">Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.</p>
+          <p class="section__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.</p>
+          <p class="section__text">Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.</p>
+          <p class="section__text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
+          <p class="section__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
+        </div>
       </section>
       <!-- /О проекте -->
 
       <!-- Стэк технолигий/ -->
       <section class="stack main__section main__section_colored">
-        <div class="stack__container container">
+        <div class="stack__container container container_left-shift">
           <h2 class="section__title">Используемые технологии</h2>
           <div class="stack__items">
             <figure class="stack__item">
@@ -72,9 +74,9 @@
       <!-- /Стэк технолигий -->
 
       <!-- Секция об авторе/ -->
-      <section class="author main__section container">
-        <img src="<%=require('./images/author_about.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="author__pic">
-        <div class="author__paragraph">
+      <section class="info main__section container container_left-shift">
+        <img src="<%=require('./images/author_about.jpg').default%>" alt="Юзерпик: Евгений Бояркин" title="Евгений Бояркин" class="info__pic">
+        <div class="info__paragraph">
           <h2 class="section__title">Об авторе</h2>
           <p class="section__text">
             В своей жизни я овладел навыками дизайнера, верстальщика, видеографа и немного фотографа. Эти профессии требуют творческого подхода и понимания визуального равновесия. И конечно я использую свои знания во frontend-разработке. Они помогают мне мыслить шире.
@@ -88,11 +90,18 @@
 
       <!-- Коммиты на гитхабе/ -->
       <section class="githib-commits main__section main__section_colored">
+        <div class="section__header container container_centered">
+          <h3 class="section__title">История коммитов из GitHub</h3>
+          <a href="" class="section__link">
+            Открыть в  Github
+            <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5856 12.0001L8.29274 17.293L9.70696 18.7072L16.4141 12.0001L9.70696 5.29297L8.29274 6.70718L13.5856 12.0001Z' fill='%231A1B22'/%3E%3C/svg%3E%0A" alt="Стрелка">
+          </a>
+        </div>
       </section>
       <!-- /Коммиты на гитхабе -->
 
     </main>
-    <footer class="footer container">
+    <footer class="footer container container_centered">
       <p class="footer__copyright">© 2020 Евгений Бояркин</p>
 
       <!-- Навигация по сайту/ -->
@@ -102,7 +111,7 @@
             <a href="./index.html" class="navigation__link">Главная</a>
           </li>
           <li class="navigation__item">
-            <a href="./about.html" class="navigation__link">О проекте</a>
+            <a href="./about.html" class="navigation__link">О&nbsp;проекте</a>
           </li>
           <li class="navigation__item">
             <a href="https://praktikum.yandex.ru/" class="navigation__link" target="_blank">Яндекс.Практикум</a>

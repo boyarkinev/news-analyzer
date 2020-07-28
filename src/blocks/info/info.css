@@ -1,0 +1,8 @@
+@import url(./__pic/info__pic.css);
+@import url(./__paragraph/info__paragraph.css);
+
+.info {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}

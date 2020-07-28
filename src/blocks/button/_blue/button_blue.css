@@ -1,0 +1,18 @@
+.button_blue {
+  padding-left: 54px;
+  padding-right: 54px;
+  background-color: #2f71e5;
+}
+
+.button_blue:hover {
+  background-color: #347eff;
+}
+
+.button_blue:active {
+  background-color: #2a65cc;
+  border: 1px solid transparent;
+}
+
+.button_blue:focus {
+  box-shadow: 0 0 3px #fff;
+}
