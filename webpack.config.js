@@ -33,15 +33,23 @@ module.exports = {
       exclude: /node_modules/,
         },
         {
-          test: /\.css$/i, 
-          use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-          {
-            loader: 'css-loader',
+          test: /\.css$/i,
+          // use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+          use: [(isDev ? 'style-loader' : {
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              importLoaders: 2
+              publicPath: '../'
             }
-          },
-          'postcss-loader']
+          }),
+
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+              }
+            },
+            'postcss-loader',
+          ]
         },
         {
           test: /\.(png|jpg|gif|ico|svg)$/i,
@@ -49,8 +57,7 @@ module.exports = {
             'file-loader?name=./images/[name].[ext]',
             {
               loader: 'image-webpack-loader',
-              options: {}
-            },
+            }
           ]
         },
         {
@@ -61,8 +68,9 @@ module.exports = {
     },
   plugins: [ 
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
+        filename: '[name].[contenthash].css',
+      }),
+
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
@@ -71,27 +79,31 @@ module.exports = {
       },
       canPrint: true
     }),
+
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
       chunks: ['./index/index'],
       filename: 'index.html'
     }),
+
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/about.html',
       chunks: ['./about/about'],
       filename: 'about.html',
     }),
+
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/analytics.html',
       chunks: ['./analytics/analytics'],
       filename: 'analytics.html',
     }),
+    
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-  })
+    })
   ]
 };

@@ -5,7 +5,7 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .section__title {
     max-width: 60%;
   }
@@ -22,6 +22,7 @@
   .section__title {
     font-size: 30px;
     line-height: 38px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    max-width: 100%;
   }
 }

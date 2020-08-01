@@ -75,7 +75,15 @@
 
       <!-- Секция об авторе/ -->
       <section class="info section container container_left-shift">
-        <img src="<%=require('./images/author_about.jpg').default%>" alt="Аватар юзера" title="Аватар юзера" class="info__pic">
+
+        <picture class="info__pic">
+          <source srcset="<%=require('./images/author_about.jpg').default%>" type="image/jpg" media (min-width: 768px)>
+          <source srcset="<%=require('./images/author_about205.jpg').default%>" type="image/jpg" media (max-width: 768px)>
+          <source srcset="<%=require('./images/author_about240.jpg').default%>" type="image/jpg" media (max-width: 425px)>
+          <source srcset="<%=require('./images/author_about275.jpg').default%>" type="image/jpg" media (max-width: 320px) >
+          <img src="<%=require('./images/author_about.jpg').default%>" alt="Аватар пользователя">
+        </picture>
+
         <div class="info__paragraph">
           <h2 class="section__title">Об авторе</h2>
           <p class="info__text-author info__text-author_mobile">
@@ -158,7 +166,7 @@
           <div class="swiper-button-next"></div>
 
         </div>
-          <div class="pagination__container">
+          <div class="swiper-pagination__container">
             <div class="swiper-pagination"></div>
           </div>
         

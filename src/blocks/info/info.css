@@ -2,6 +2,7 @@
 @import url(./__paragraph/info__paragraph.css);
 @import url(./__text/info__text.css);
 @import url(./__text-author/info__text-author.css);
+@import url(./__pic/info__pic.css);
 
 .info {
   font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
