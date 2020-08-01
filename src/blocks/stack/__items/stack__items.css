@@ -20,7 +20,6 @@
 
 @media (max-width: 520px) {
   .stack__items {
-    /* grid-template-columns: repeat(2, 120px); */
     row-gap: 0;
   }
 }
