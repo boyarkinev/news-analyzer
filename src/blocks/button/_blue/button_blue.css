@@ -15,4 +15,5 @@
 
 .button_blue:focus {
   box-shadow: 0 0 3px #fff;
+  border-color: #fff;
 }

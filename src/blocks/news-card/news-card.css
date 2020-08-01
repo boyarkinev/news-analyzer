@@ -5,19 +5,15 @@
 @import url(./__title/news-card__title.css);
 @import url(./__source/news-card__source.css);
 @import url(./__paragraph/news-card__paragraph.css);
+@import url(./__link/news-card__link.css);
 
 .news-card {
   max-width: 400px;
-  min-height: 576px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-radius: 16px;
-  background-color: #fff;
-  text-decoration: none;
-  color: inherit;
   box-sizing: border-box;
-  overflow: hidden;
+  border-radius: 16px;
   transition: box-shadow .3s;
 }
 

@@ -1,0 +1,15 @@
+.github__link-text {
+  display: flex;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: inherit;
+  align-self: flex-start;
+}
+
+/* @media (max-width: 720px) {
+  .github__link-text {
+    align-self: center;
+  }
+} */

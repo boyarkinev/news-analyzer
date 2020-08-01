@@ -1,8 +1,58 @@
 .info__pic {
-  max-width: 464px;
-  max-height: 464px;
-  width: 100vw;
-  height: 100%;
+  display: block;
+  max-width: 27.6vw;
   border-radius: 50%;
   margin-right: 56px;
+  object-fit: cover;
+  align-self: center;
+}
+
+@media (max-width: 900px) {
+  .info__pic {
+    max-width: 35%;
+    margin-right: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info__pic {
+    max-width: 40%;
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info__pic {
+    max-width: 34%;
+    margin-right: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .info__pic {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .info__pic {
+    max-width: 60%;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+  .info__pic {
+    max-height: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .info__pic {
+    max-width: 95%;
+    max-height: 95%;
+  }
 }

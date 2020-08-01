@@ -5,4 +5,25 @@
   display: flex;
   list-style-type: none;
   padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 840px) {
+  .social {
+    position: absolute;
+    right: 104px;
+    top: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social {
+    right: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  .social {
+    right: 16px;
+  }
 }

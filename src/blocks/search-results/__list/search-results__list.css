@@ -2,4 +2,25 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 896px) {
+  .search-results__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-results__list {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .search-results__list {
+    grid-template-columns: 1fr;
+  }
 }

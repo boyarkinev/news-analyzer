@@ -4,4 +4,28 @@
   line-height: 22px;
   margin: 0;
   padding: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  line-clamp: 5;
+  box-orient: vertical;
+}
+
+@media (max-width: 768px) {
+  .news-card__text {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .news-card__text {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
 }

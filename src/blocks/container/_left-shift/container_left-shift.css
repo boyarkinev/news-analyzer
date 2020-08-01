@@ -2,3 +2,23 @@
   padding-left: 104px;
   padding-right: 216px;
 }
+
+@media (max-width: 1100px) {
+  .container_left-shift {
+    padding-right: 104px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container_left-shift {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container_left-shift {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

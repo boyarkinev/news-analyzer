@@ -4,3 +4,17 @@
   gap: 40px;
   align-items: center;
 }
+
+@media (max-width: 670px) {
+  .stack__items {
+    grid-template-columns: repeat(3, 120px);
+    gap: 33px;
+  }
+}
+
+@media (max-width: 520px) {
+  .stack__items {
+    grid-template-columns: repeat(2, 120px);
+    row-gap: 0;
+  }
+}

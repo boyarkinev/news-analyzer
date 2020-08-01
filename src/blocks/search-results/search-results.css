@@ -1,13 +1,13 @@
 @import url(./__container/search-results__container.css);
 @import url(./__preloader/search-results__preloader.css);
 @import url(./__negative-pic/search-results__negative-pic.css);
-@import url(./__button/search-result__button.css);
-@import url(./__submit/search-results__submit.css);
 @import url(./__list/search-results__list.css);
 @import url(./__title/search-results__title.css);
 @import url(./__text/search-results__text.css);
+@import url(./__analytics-link/search-results__analytics-link.css);
 
 .search-results {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   position: relative;

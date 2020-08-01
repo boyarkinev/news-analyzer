@@ -1,0 +1,20 @@
+.header__nav {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 450px) {
+  .header__nav {
+    min-height: 56px;
+  }
+}

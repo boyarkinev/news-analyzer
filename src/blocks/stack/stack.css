@@ -4,3 +4,6 @@
 @import url(./__item/stack__item.css);
 @import url(./__logo/stack__logo.css);
 
+.stack {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}

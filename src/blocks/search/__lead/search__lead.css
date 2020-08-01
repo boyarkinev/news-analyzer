@@ -1,0 +1,17 @@
+.search__lead {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+  max-width: 815px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 450px){
+  .search__lead {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 18px;
+  }
+}

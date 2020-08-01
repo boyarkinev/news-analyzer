@@ -1,0 +1,5 @@
+.header__nav-link_active {
+  border-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+}

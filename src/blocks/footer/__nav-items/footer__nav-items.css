@@ -1,0 +1,12 @@
+.footer__nav-items {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 540px) {
+  .footer__nav-items {
+    flex-direction: column;
+  }
+}

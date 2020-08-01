@@ -6,3 +6,9 @@
 .social__item:last-of-type {
   margin: 0;
 }
+
+@media (max-width: 800px) {
+  .social__item {
+    margin-right: 30px;
+  }
+}

@@ -1,8 +1,31 @@
 @import url(./__copyright/footer__copyright.css);
+@import url(./__container/footer__container.css);
+@import url(./__nav/footer__nav.css);
+@import url(./__nav-items/footer__nav-items.css);
+@import url(./__nav-item/footer__nav-item.css);
+@import url(./__nav-link/footer__nav-link.css);
 
 .footer {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
 }

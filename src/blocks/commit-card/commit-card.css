@@ -1,0 +1,41 @@
+@import url(./__date/commit-card__date.css);
+@import url(./__header/commit-card__header.css);
+@import url(./__userpic/commit-card__userpic.css);
+@import url(./__person/commit-card__person.css);
+@import url(./__usename/commit-card__usename.css);
+@import url(./__email/commit-card__email.css);
+@import url(./__text/commit-card__text.css);
+
+.commit-card {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  min-height: 288px;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .commit-card {
+    max-width: 336px;
+    min-height: 242px;
+  }
+}
+
+@media (max-width: 320px) {
+  .commit-card {
+    max-width: 288px;
+    min-height: 264px;
+  }
+}
+
+@media (max-width: 320px) {
+  .commit-card:first-of-type {
+    margin-left: 16px;
+  }
+}

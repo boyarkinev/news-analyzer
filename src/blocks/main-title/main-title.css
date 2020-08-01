@@ -1,6 +1,22 @@
 .main-title {
-  font-size: 3.75rem;
-  line-height: 4rem;
-  margin-bottom: 2.125rem;
+  font-size: 60px;
+  line-height: 64px;
+  font-weight: normal;
+  margin-bottom: 26px;
   margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 80%;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main-title {
+    margin-bottom: 16px;
+  }
 }

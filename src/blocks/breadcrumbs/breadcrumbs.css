@@ -1,11 +1,10 @@
 @import url(./__items/breadcrumbs__items.css);
 @import url(./__item/breadcrumbs__item.css);
 @import url(./__link/breadcrumbs__link.css);
-@import url(./__link/_off/breadcrumbs__link_off.css);
 
 .breadcrumbs {
   display: flex;
-  padding-top: 45px;
+  margin-top: 35px;
 }
 
 .breadcrumbs li:after {
@@ -14,4 +13,16 @@
 
 .breadcrumbs li:last-of-type:after {
   content: " ";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding-top: 36px;
+  }
+}
+
+@media (max-width: 450px) {
+  .breadcrumbs {
+    display: none;
+  }
 }

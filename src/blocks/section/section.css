@@ -1,4 +1,24 @@
-@import url(./__text/section__text.css);
 @import url(./__title/section__title.css);
-@import url(./__header/section__header.css);
-@import url(./__link/section__link.css);
+@import url(./__container/section__container.css);
+@import url(./_colored/section_colored.css);
+
+.section {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

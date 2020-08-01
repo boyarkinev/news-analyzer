@@ -1,0 +1,8 @@
+.footer__nav {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: inherit;
+  box-sizing: border-box;
+}
