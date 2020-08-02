@@ -1,0 +1,5 @@
+.commit-card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}

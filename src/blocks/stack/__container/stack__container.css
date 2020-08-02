@@ -1,0 +1,10 @@
+.stack__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1220px) {
+  .stack__container {
+    flex-direction: column;
+  }
+}

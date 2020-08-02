@@ -1,0 +1,25 @@
+.diagram__day {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  margin-bottom: 56px;
+}
+
+.diagram__day:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .diagram__day {
+    grid-template-columns: 116px 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .diagram__day {
+    grid-template-columns: 80px 1fr;
+    margin-bottom: 24px;
+  }
+  .diagram__day:first-of-type {
+    margin-top: 17px;
+  }
+}

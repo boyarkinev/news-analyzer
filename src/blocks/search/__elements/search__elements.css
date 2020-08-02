@@ -1,0 +1,19 @@
+.search__elements {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-top: 64px;
+}
+
+@media (max-width: 768px) {
+  .search__elements {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 450px) {
+  .search__elements {
+    flex-direction: column;
+  }
+}

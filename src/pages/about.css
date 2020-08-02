@@ -1,0 +1,16 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../vendor/swiper-bundle.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/container/container.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/logo/logo.css);
+@import url(../blocks/selector/selector.css);
+@import url(../blocks/section/section.css);
+@import url(../blocks/main/main.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/social/social.css);
+@import url(../blocks/info/info.css);
+@import url(../blocks/stack/stack.css);
+@import url(../blocks/commit-card/commit-card.css);
+@import url(../blocks/github/github.css);

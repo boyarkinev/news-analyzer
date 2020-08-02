@@ -1,0 +1,28 @@
+.diagram__scale {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0 0 0 104px;
+  padding-left: 0;
+  padding-top: 14px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .diagram__scale {
+    margin-left: 116px;
+  }
+}
+
+@media (max-width: 450px) {
+  .diagram__scale {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagram__scale {
+    padding-top: 14px;
+  padding-bottom: 0;
+  }
+}

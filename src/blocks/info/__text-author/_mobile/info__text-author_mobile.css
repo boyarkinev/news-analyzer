@@ -1,0 +1,20 @@
+.info__text-author_mobile {
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .info__text-author_mobile {
+    margin-top: 0;
+  }
+
+  .info__text-author_mobile:first-of-type {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .info__text-author_mobile:first-of-type {
+    margin-top: 16px;
+  }
+}

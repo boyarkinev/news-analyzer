@@ -1,0 +1,6 @@
+@import url(./__text/result__text.css);
+
+.result {
+  display: flex;
+  flex-direction: column;
+}

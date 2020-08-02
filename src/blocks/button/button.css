@@ -1,0 +1,35 @@
+@import url(./_blue/button_blue.css);
+@import url(./_white/button_white.css);
+
+.button {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: inherit;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 1;
+  transition: background-color .3s, box-shadow .3s;
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .button {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}

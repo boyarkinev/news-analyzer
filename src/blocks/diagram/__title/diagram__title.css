@@ -1,0 +1,13 @@
+.diagram__title {
+  font-size: 26px;
+  line-height: 30px;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 450px) {
+  .diagram__title {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+}

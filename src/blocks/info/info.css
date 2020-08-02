@@ -1,0 +1,30 @@
+@import url(./__pic/info__pic.css);
+@import url(./__paragraph/info__paragraph.css);
+@import url(./__text/info__text.css);
+@import url(./__text-author/info__text-author.css);
+@import url(./__pic/info__pic.css);
+
+.info {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .info {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .info {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .info {
+    flex-direction: column;
+  }
+}

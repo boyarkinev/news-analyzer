@@ -1,0 +1,7 @@
+.root {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  color: #1a1b22;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}

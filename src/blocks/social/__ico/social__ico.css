@@ -1,0 +1,15 @@
+@import url(./_fb/social__ico_fb.css);
+@import url(./github/social__ico_github.css);
+
+.social__ico {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  transition: .3s;
+}
+
+.social__ico:hover {
+  opacity: .6;
+}

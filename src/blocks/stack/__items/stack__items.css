@@ -1,0 +1,25 @@
+.stack__items {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .stack__items {
+    align-self: center;
+  }
+}
+
+@media (max-width: 670px) {
+  .stack__items {
+    grid-template-columns: repeat(2, 120px);
+    gap: 33px;
+  }
+}
+
+@media (max-width: 520px) {
+  .stack__items {
+    row-gap: 0;
+  }
+}

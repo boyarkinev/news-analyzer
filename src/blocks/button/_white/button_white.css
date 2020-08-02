@@ -1,0 +1,39 @@
+.button_white {
+  padding-left: 84px;
+  padding-right: 84px;
+  background-color: #fff;
+  margin-top: 64px;
+}
+
+.button_white:hover {
+  opacity: .9;
+  box-shadow: 0 0 15px rgba(26, 27, 34, .2);
+}
+
+.button_white:active {
+  background-color: #fff;
+  border: 1px solid rgba(26, 27, 34, .5);
+}
+
+.button_white:focus {
+  border-color: rgba(26, 27, 34, .5);
+}
+
+@media (max-width: 768px) {
+  .button_white {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .button_white {
+    margin-top: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .button_white {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

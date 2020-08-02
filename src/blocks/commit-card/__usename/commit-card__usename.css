@@ -1,0 +1,12 @@
+.commit-card__usename {
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .commit-card__usename {
+    font-size: 20px;
+  }
+}

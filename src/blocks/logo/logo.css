@@ -1,0 +1,14 @@
+.logo {
+  font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+@media (max-width: 450px) {
+  .logo {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,34 @@
+.github__button {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: none;
+  justify-content: center;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #1A1B22;
+  box-sizing: border-box;
+  border-radius: 80px;
+  color: inherit;
+  margin-right: 16px;
+  margin-left: 16px;
+  margin-top: 24px;
+  transition: background-color .2s;
+  background-color: #f5f6f7;;
+  }
+
+.github__button:hover {
+  background-color: rgba(26, 27, 34, .1);
+}
+
+.github__button:active {
+  background-color: rgba(26, 27, 34, .3);
+}
+
+@media (max-width: 390px){
+  .github__button {
+    display: flex;
+  }
+}
