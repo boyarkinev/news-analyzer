@@ -1,6 +1,7 @@
 @import url(./__items/breadcrumbs__items.css);
 @import url(./__item/breadcrumbs__item.css);
 @import url(./__link/breadcrumbs__link.css);
+@import url(./__link/_off/breadcrumbs__link_off.css); /* расположено здесь, чтобы работала специфичность при миксе*/
 
 .breadcrumbs {
   display: flex;
