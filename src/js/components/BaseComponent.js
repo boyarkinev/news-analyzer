@@ -2,8 +2,8 @@
 
 export class BaseComponent {
 
-  constructor(attr) {
-    this._$el = document.querySelector(attr)
+  constructor(selector) {
+    this._$el = document.querySelector(selector)
     this.init()
   }
 

@@ -6,6 +6,7 @@
 @import url(./__source/news-card__source.css);
 @import url(./__paragraph/news-card__paragraph.css);
 @import url(./__link/news-card__link.css);
+@import url(./__image/news-card__image.css);
 
 .news-card {
   max-width: 400px;
