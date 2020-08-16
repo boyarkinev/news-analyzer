@@ -1,13 +1,16 @@
-import { BaseComponent } from './BaseComponent'
+'use strict'
 
-export class SearchInput extends BaseComponent {
+import BaseComponent from './BaseComponent'
 
-  constructor(id) {
-    super(id)
+export default class SearchInput extends BaseComponent {
+
+  constructor(attr, storageTransfer) {
+    super(attr)
   }
 
   init = () => {
-    // const btn = this._$el.querySelector('#search-button')
-    console.log(this._$el)
+    this._input = this._$el.querySelector('#search-input')
+    this._button = this._$el.querySelector('#search-button')
+    return this._$el
   }
 }

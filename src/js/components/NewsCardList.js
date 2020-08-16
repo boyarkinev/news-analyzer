@@ -1,12 +1,12 @@
 'use strict'
 
-import { BaseComponent } from './BaseComponent';
+import BaseComponent from './BaseComponent'
 
 export default class NewsCardList extends BaseComponent {
-  constructor(newsCard, attr) {
+  constructor(attr, newsCard, dataStorage) {
     super(attr)
     this._newsCard = newsCard
-    // this._sources = sources
+    this._dataStorage = dataStorage.getData()
   }
 
   init = (elem) => {
@@ -14,10 +14,8 @@ export default class NewsCardList extends BaseComponent {
     this._$el.append(card)
   }
 
-  // renderCards = () => {
-  //   this._sources.forEach(
-  //     elem => this.init(elem)
-  //   )
-  // }
-
+  render = (elems) => {
+    this._$el.innerHTML = ''
+    elems.forEach(elem => this.init(elem))
+  }
 }
