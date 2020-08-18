@@ -3,10 +3,9 @@
 import BaseComponent from './BaseComponent'
 
 export default class NewsCardList extends BaseComponent {
-  constructor(attr, newsCard, dataStorage) {
+  constructor(attr, newsCard) {
     super(attr)
     this._newsCard = newsCard
-    this._dataStorage = dataStorage.getData()
   }
 
   init = (elem) => {
@@ -15,7 +14,11 @@ export default class NewsCardList extends BaseComponent {
   }
 
   render = (elems) => {
-    this._$el.innerHTML = ''
+    this.clearing()
     elems.forEach(elem => this.init(elem))
+  }
+
+  clearing = () => {
+    this._$el.innerHTML = ''
   }
 }

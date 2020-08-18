@@ -14,10 +14,10 @@
 </head>
 
 <body>
-  <div class="root">
+  <section class="root">
     <header class="header header_background header_white-text">
 
-      <!-- Навигация по сайту/ -->
+      <!-- Навигация по сайту / -->
       <div class="header__nav container container_centered">
         <p class="logo ">NewsAnalyzer</p>
         <nav>
@@ -31,52 +31,64 @@
           </ul>
         </nav>
       </div>
-      <!-- /Навигация по сайту -->
+      <!-- / Навигация по сайту -->
 
       <div class="selector"></div>
 
-      <!-- Поисковая форма/ -->
+      <!-- Поисковая форма / -->
       <div class="search">
         <div class="search__container section">
           <h1 class="main-title">Что в мире творится?</h1>
           <p class="search__lead">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-          <form class="search__elements" id="search-form">
-            <input type="text" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30" required>
+          <form class="search__elements" id="search-form" novalidate>
+            <input type="text" id="search-input" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30">
             <button type="submit" id="search-button" class="button button_blue">Искать</button>
+            <span id="alert" class="alert-message"></span>
           </form>
         </div>
       </div>
-      <!-- /Поисковая форма -->
+      <!-- / Поисковая форма -->
 
     </header>
 
     <main class="main">
 
-      <!-- Результат поиска/ -->
-      
-      <section class="search-results section section_colored">
-        
-        <div class="search-results__container search-results__container_is-hidden">
+      <section id="preloader" class="search-results section section_colored hide">
+        <div class="search-results__container">
+          <i class="search-results__preloader"></i>
+          <p class="search-results__text">Идет поиск новостей...</p>
+        </div>
+      </section>
+
+      <section id="negative-search-message" class="search-results section section_colored hide">
+        <div class="search-results__container">
           <figure class="search-results__negative-pic"></figure>
           <h3 class="search-results__title">Ничего не найдено</h3>
           <p class="search-results__text">К сожалению, по вашему запросу ничего не найдено.</p>
         </div>
+      </section>
+
+      <!-- Результат поиска / -->
+      
+      <section id="search-section" class="search-results section section_colored hide">
 
         <div class="search-results__container container container_centered">
-          <div class="section__container section__container_analytics">
+          <div class="section__container section__container_analytics ">
             <h2 class="section__title">Результаты поиска</h2>
             <a href="./analytics.html" class="search-results__analytics-link">
               Посмотреть&nbsp;аналитику</a>
           </div>
+
           <ul class="search-results__list">
             
           </ul>
+          
           <button type="submit" class="button button_white">Показать еще</button>
         </div>
       </section>
-      <!-- /Результат поиска -->
+      <!-- / Результат поиска -->
 
-      <!-- Об авторе/ -->
+      <!-- Об авторе / -->
       <section class="info section container container_left-shift">
 
         <picture class="info__pic">
@@ -107,7 +119,7 @@
           </p>
         </div>
       </section>
-      <!-- /Об авторе -->
+      <!-- / Об авторе -->
 
     </main>
 
@@ -117,7 +129,7 @@
 
         <p class="footer__copyright">©&nbsp;2020&nbsp;Евгений&nbsp;Бояркин</p>
 
-        <!-- Навигация по сайту/ -->
+        <!-- Навигация по сайту / -->
         <nav class="footer__nav">
           <ul class="footer__nav-items">
             <li class="footer__nav-item">
@@ -131,23 +143,24 @@
             </li>
           </ul>
         </nav>
-        <!-- /Навигация по сайту -->
+        <!-- / Навигация по сайту -->
 
-        <!-- Ссылки на соцсети/ -->
+        <!-- Ссылки на соцсети / -->
         <ul class="social">
           <li class="social__item">
-            <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank"></a>
+            <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank" rel="noopener"></a>
           </li>
           <li class="social__item">
-            <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank"></a>
+            <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank" rel="noopener"></a>
           </li>
         </ul>
-        <!-- /Ссылки на соцсети -->
+        <!-- / Ссылки на соцсети -->
 
       </div>
 
     </footer>
 
+    <!-- Темплейт карточки / -->
     <template id="news-card-template">
       <li class="news-card">
         <a href="#" target="_blank" class="news-card__link">
@@ -165,8 +178,9 @@
         </a>
       </li>
     </template>
+    <!-- / Темплейт карточки -->
 
-  </div>
+  </section>
 </body>
 
 </html>
