@@ -15,3 +15,5 @@
 @import url(../blocks/search-results/search-results.css);
 @import url(../blocks/news-card/news-card.css);
 @import url(../blocks/button/button.css);
+@import url(../blocks/hide/hide.css);
+@import url(../blocks/alert/alert-message.css)

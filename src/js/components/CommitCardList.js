@@ -3,8 +3,8 @@
 import BaseComponent from './BaseComponent'
 
 export default class CommitCardList extends BaseComponent {
-  constructor(attr, commitCard) {
-    super(attr)
+  constructor(selector, commitCard) {
+    super(selector)
     this._commitCard = commitCard
   }
 

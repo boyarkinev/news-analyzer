@@ -19,13 +19,20 @@ export default class CommitCard extends BaseComponent {
   }
 
   init = () => {
-    // this._card = this._$el.content.querySelector('.commit-card').cloneNode(true)
-    this._card = this._$el
+    this._card = this._$el.content.cloneNode(true)
     this._card.querySelector('.commit-card__date').textContent = this._timeStampConvert(this._date)
     this._card.querySelector('.commit-card__userpic').src = this._avatar
     this._card.querySelector('.commit-card__usename').textContent = this._name
     this._card.querySelector('.commit-card__email').textContent = this._emailNormalyze(this._email)
     this._card.querySelector('.commit-card__text').textContent = this._text
+
+    // if (this._name === 'GitHub') {
+    //   this._card.querySelector('.commit-card__userpic').src = `${"<%=require('./images/github-logo.png').default%>"}`
+    //   // "https://image.flaticon.com/icons/svg/25/25231.svg"
+    // } else {
+    //   this._card.querySelector('.commit-card__userpic').src = this._avatar
+    // }
+
     return this._card
   }
 

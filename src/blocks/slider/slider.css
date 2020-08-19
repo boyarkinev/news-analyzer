@@ -1,0 +1,16 @@
+@import url(./__wrapper/slider__wrapper.css);
+@import url(./__container/slider__container.css);
+@import url(./__pagination/slider__pagination.css);
+@import url(./__pagination-bullet/slider__pagination-bullet.css);
+@import url(./__pagination-bullet/_active/slider__pagination-bullet_active.css);
+@import url(./__button/slider__button.css);
+@import url(./__slide/slider__slide.css);
+
+.slider {
+  position: relative;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: green;
+}

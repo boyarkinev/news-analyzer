@@ -3,8 +3,8 @@
 import BaseComponent from './BaseComponent'
 
 export default class NewsCardList extends BaseComponent {
-  constructor(attr, newsCard) {
-    super(attr)
+  constructor(selector, newsCard) {
+    super(selector)
     this._newsCard = newsCard
   }
 

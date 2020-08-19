@@ -3,8 +3,8 @@
 import BaseComponent from './BaseComponent'
 
 export default class SearchForm extends BaseComponent {
-  constructor(attr, submitHandler) {
-    super(attr)
+  constructor(selector, submitHandler) {
+    super(selector)
     this._submitHandler = submitHandler
   }
 

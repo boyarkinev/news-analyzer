@@ -1,6 +1,5 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
-@import url(../vendor/swiper-bundle.css);
 @import url(../blocks/root/root.css);
 @import url(../blocks/container/container.css);
 @import url(../blocks/header/header.css);
@@ -14,3 +13,5 @@
 @import url(../blocks/stack/stack.css);
 @import url(../blocks/commit-card/commit-card.css);
 @import url(../blocks/github/github.css);
+@import url(../blocks/hide/hide.css);
+@import url(../blocks/slider/slider.css);
