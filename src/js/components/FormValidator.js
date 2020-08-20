@@ -16,11 +16,6 @@ export default class FormValidator {
     const alertElement = this._form.querySelector('.alert-message')
     input.setCustomValidity('')
 
-    if (input.validity.valueMissing) {
-      input.setCustomValidity(errorMessages.empty)
-      alertElement.textContent = input.validationMessage
-      return false
-    }
     if (input.validity.tooShort || input.validity.tooLong) {
       input.setCustomValidity(errorMessages.wrongLength)
       alertElement.textContent = input.validationMessage

@@ -1,61 +1,101 @@
 'use strict'
 
 import '../pages/index.css'
-import {NewsCard} from './components/NewsCard'
-import {NewsCardList} from './components/NewsCardList'
 
-const sources = [
-  {
-    link: 'https://lenta.ru/',
-    date: '2 августа, 2019',
-    title: 'Национальное достояние – парки',
-    text: 'В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.',
-    source: 'Лента.ру',
-    image: 'https://thumbs.dreamstime.com/b/лес-весны-в-тумане-утра-через-который-лучи-солнца-прорезывают-желт-147135300.jpg'
-  },
-  {
-    link: 'https://meduza.io/',
-    date: '2 августа, 2019',
-    title: 'Национальное достояние – парки',
-    text: 'В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.',
-    source: 'meduza',
-    image: 'https://s4.travelask.ru/dlimg/35/351de7b45696bc75ea423dd933f8ec5d.jpg'
-  },
-  {
-    link: 'https://ria.ru/',
-    date: '2 августа, 2019',
-    title: 'Национальное достояние – парки',
-    text: 'В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.',
-    source: 'РИА',
-    image: 'https://lh3.googleusercontent.com/Rr4yRjzQzh0g0LcoyR04kFc3LlbSgKcfUCcY_5NYQWMs2sSyzTbyKTEp6tji95bfNw=h500'
-  },
-  {
-    link: 'https://yandex.ru/',
-    date: '2 августа, 2019',
-    title: 'Национальное достояние – парки',
-    text: 'В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.',
-    source: 'Дзен',
-    image: 'https://zakagioboi.ru/assets/images/products/Mountain/01.07.13/MOUNTAIN-131462663.jpg'
-  },
-  {
-    link: 'https://zona.media/',
-    date: '2 августа, 2019',
-    title: 'Национальное достояние – парки',
-    text: 'В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.',
-    source: 'Медиазона',
-    image: 'https://avatars.mds.yandex.net/get-pdb/1338671/b7459288-e38f-4453-b701-a46fe5968a7b/s1200?webp=false'
-  },
-  {
-    link: 'http://mag.afisha.ru/',
-    date: '2 августа, 2019',
-    title: 'Национальное достояние – парки',
-    text: 'В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.',
-    source: 'Афиша',
-    image: 'https://avatars.mds.yandex.net/get-pdb/49816/346a18cb-4ac8-4cba-884f-e999e8e6605d/s1200?webp=false'
-  },
-]
+import NewsApi from './modules/NewsApi'
+import DataStorage from './modules/DataStorage'
 
-const newsCard = (...sources) => new NewsCard('#news-card-template', ...sources).init()
-const newsCardList = new NewsCardList('.search-results__list', newsCard, sources)
+import SearchSection from './components/SearchSection'
+import SearchForm from './components/SearchForm'
+import NewsCard from './components/NewsCard'
+import NewsCardList from './components/NewsCardList'
+import Preloader from './components/Preloader'
+import NegativeSearchMessage from './components/NegativeSearchMessage'
+import FormValidator from './components/FormValidator'
+import {errorMessages} from './constants/error-messages'
+import ShowElseButton from './components/ShowElseButton';
 
-newsCardList.renderCards()
+const searchForm = new SearchForm('#search-form', submitHandler) // Компонент инпута
+const preloader = new Preloader('#preloader') // Спиннер загрузки
+const negativeSearchMessage = new NegativeSearchMessage('#negative-search-message') // Баннер с "Ничего не найдено"
+const searchSection = new SearchSection('#search-section') // DOM-контейнер для карточек с новостями
+const dataStorage = new DataStorage // Компонент локального хранилища
+const newsCard = (...args) => new NewsCard('#news-card-template', ...args).init() // Компонент карточки
+const newsCardList = new NewsCardList('.search-results__list', newsCard) // Компонент вывода полученных карточек
+const newsApi = new NewsApi // Компонент новостного API
+const formValidator = new FormValidator(searchForm)
+const showElseButton = new ShowElseButton('#show-else', showElseClickHandler)
+
+formValidator.init(errorMessages)
+
+function submitHandler(event) { // Отправляем поисковую фразу
+  event.preventDefault()
+  newsCardList.clearing()
+  searchSection.hide()
+  negativeSearchMessage.hide()
+  localStorage.clear()
+  preloader.show()
+  storageTransfer()
+}
+
+function storageTransfer() { // Обращаемся к серверу
+  formValidator.setSubmitButtonState(false)
+  const keyWord = searchForm.getInput().value
+  newsApi.getNews(keyWord)
+  .then(res => {
+    const elems = res.articles
+    preloader.hide()
+    if (elems.length === 0) {
+      dataStorage.init()
+      preloader.hide()
+      searchSection.hide()
+      negativeSearchMessage.show()
+    }
+    else {
+      negativeSearchMessage.hide()
+      dataStorage.setArticlesData(elems)
+      dataStorage.setKeyWordData(keyWord)
+      searchSection.show()
+      newsCardList.render(elems)
+      formValidator.setSubmitButtonState(true)
+    }
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+}
+
+showElseButton.init()
+
+let counter = 1
+
+function showElseClickHandler(event) { // Рендерим карточки на страницу по три штуки
+  event.preventDefault()
+  preloader.hide()
+  let cards = dataStorage.getArticlesData()
+  let cardsOnPage = 3
+  let start = (++counter -1) * cardsOnPage
+  let end = start + cardsOnPage
+  let result = cards.slice(start, end)
+  if (start+3 >= cards.length) {
+    showElseButton.hide()
+  }
+  
+  console.log(start)
+  console.log(end)
+  
+  newsCardList.render(result)
+}
+
+
+document.addEventListener('DOMContentLoaded', event => { // Рендерим 3 карточки после загрузки DOM-дерева и обновляем DOM-объекты
+  event.preventDefault()
+  dataStorage.getArticlesData()
+  formValidator.resetForms()
+  formValidator.resetFormAlerts()
+  dataStorage.getArticlesData().length === 0 || dataStorage.getKeyWordData().length === 0 ? searchSection.hide() : searchSection.show()
+  searchForm.init()
+  searchForm.getInput().value = dataStorage.getKeyWordData()
+  newsCardList.render(dataStorage.getArticlesData().slice(0, 3))
+  searchForm.getInput().value.length !== 0 ? formValidator.setSubmitButtonState(true) : formValidator.setSubmitButtonState(false)
+})
