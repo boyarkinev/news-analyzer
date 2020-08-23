@@ -11,7 +11,8 @@ const statistics = new Statistics('#statistic', headerMatchCounter)
 
 // Создаем массив дат за неделю
 const date = new Date(dataStorage.getNewsDate())
-week.push({date: date.setDate(date.getDate()), count:0})
+date.setDate(date.getDate())
+week.push({date: date.toISOString().split('T')[0], count:0})
 for (let i = 0; i < 6; i++) {
   date.setDate(date.getDate() - 1)
   const day = date.toISOString().split('T')[0]

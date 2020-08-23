@@ -65,6 +65,7 @@ function storageTransfer() { // Обращаемся к серверу
       newsCardList.render(elems)
       formValidator.setSubmitButtonState(true)
     }
+    
   })
   .catch((err) => {
     console.log(err)
@@ -85,7 +86,6 @@ function showElseClickHandler(event) { // Рендерим карточки на
   if (start+3 >= cards.length) {
     showElseButton.hide()
   }
-  
   newsCardList.render(result)
 }
 
