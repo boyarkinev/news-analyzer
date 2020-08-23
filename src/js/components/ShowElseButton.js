@@ -10,6 +10,5 @@ export default class ShowElseButton extends BaseComponent {
 
   init = () => {
     this._$el.addEventListener('click', this._showElseClickHandler)
-    // return this._$el
   }
 }

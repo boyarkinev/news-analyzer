@@ -15,6 +15,7 @@ export default class CommitCard extends BaseComponent {
     this._avatar = elem.author.avatar_url
     this._name = elem.commit.committer.name
     this._email = elem.commit.committer.email
+    console.log(this._email)
     this._text = elem.commit.message
   }
 
