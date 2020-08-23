@@ -1,7 +1,7 @@
 'use string'
 
 export const ERROR_MESSAGES = {
-  wrongLength: 'Не пожалейте для меня от 2 до 30 символов :)',
+  wrongLength: 'Нужно ввести ключевое слово',
   notOnlySpace: 'Любой запрос прекрасен, если это не пробелы :)'
 }
 

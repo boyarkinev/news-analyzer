@@ -1,4 +1,4 @@
-const NewsApiUrl = NODE_ENV === 'development' ? 'http://newsapi.org/v2/everything' : ' https://nomoreparties.co/v2/everything'
+const NewsApiUrl = NODE_ENV === 'development' ? 'https://newsapi.org/v2/everything' : 'https://nomoreparties.co/news/v2/everything'
 
 const NEWS_API_PARAMS = {
   URL_NEWS_API: NewsApiUrl,

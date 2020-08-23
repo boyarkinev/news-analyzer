@@ -17,7 +17,7 @@ const githubApi = new GithubApi
 githubApi.getCommits() // Получаем данные с сервера github, рендерим в слайдер
   .then(res => {
     commitCardList.render(res)
-    let slider = new Swiper('.slider__container', SLIDER_PARAMS)
+    const slider = new Swiper('.slider__container', SLIDER_PARAMS)
   })
   .catch((err) => {
     alert(err)
