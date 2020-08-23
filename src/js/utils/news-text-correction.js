@@ -8,3 +8,5 @@ function newsTextCorrection (text) {
 }
 
 export default newsTextCorrection
+
+// Убираем битый текст из карточек новостейы

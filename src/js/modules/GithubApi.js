@@ -1,11 +1,11 @@
 'use strict'
 
-import GithubApiParams from '../constants/github-api-params'
+import GITHUB_API_PARAMS from '../constants/GITHUB_API_PARAMS'
 
 export default class GithubApi {
 	
 	constructor() {
-    this.url = GithubApiParams.URL_GITHUB_API
+    this.url = GITHUB_API_PARAMS.URL_GITHUB_API
 	}
 
 	getCommits = () => {

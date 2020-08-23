@@ -1,4 +1,4 @@
-const monthsListAnalytics = {
+const MONTHS_LIST_ALALYTICS = {
   '0': "январь",
   '1': "февраль",
   '2': "март",
@@ -13,6 +13,6 @@ const monthsListAnalytics = {
   '11': "декабрь"
 }
 
-export default monthsListAnalytics
+export default MONTHS_LIST_ALALYTICS
 
 // Месяцы для таблицы аналитики

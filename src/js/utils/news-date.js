@@ -8,3 +8,5 @@ date.setDate(date.getDate() - 6)
 const dateFrom = date.toISOString().split('T')[0] // Дата самой старой статьи
 
 export {dateTo, dateFrom}
+
+// Изменяем формат даты для обращения к api новостей и вывода на страницы

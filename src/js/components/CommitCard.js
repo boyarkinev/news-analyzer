@@ -26,12 +26,6 @@ export default class CommitCard extends BaseComponent {
     this._card.querySelector('.commit-card__email').textContent = this._emailNormalyze(this._email)
     this._card.querySelector('.commit-card__text').textContent = this._text
 
-    // if (this._name === 'GitHub') {
-    //   this._card.querySelector('.commit-card__userpic').src = "https://image.flaticon.com/icons/svg/25/25231.svg"
-    // } else {
-    //   this._card.querySelector('.commit-card__userpic').src = this._avatar
-    // }
-
     return this._card
   }
 

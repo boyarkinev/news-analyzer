@@ -1,4 +1,4 @@
-const daysList = {
+const DAYS_LIST = {
   '1': "пн",
   '2': "вт",
   '3': "ср",
@@ -8,6 +8,6 @@ const daysList = {
   '0': "вс",
 }
 
-export default daysList
+export default DAYS_LIST
 
 // Список дней недели для аналитики

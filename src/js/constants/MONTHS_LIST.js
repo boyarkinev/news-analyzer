@@ -1,4 +1,4 @@
-const monthsList = {
+const MONTHS_LIST = {
   '01': "января",
   '02': "февраля",
   '03': "марта",
@@ -13,6 +13,6 @@ const monthsList = {
   '12': "декабря"
 }
 
-export default monthsList
+export default MONTHS_LIST
 
 // Список месяцев для карточек новостей и коммитов github

@@ -1,11 +1,11 @@
 'use strict'
-import {errorMessages} from '../constants/error-messages'
+import {ERROR_MESSAGES} from '../constants/ERROR_MESSAGES'
 export default class FormValidator {
   constructor(form) {
     this._form = form.init()
   }
 
-  init = (errorMessages) => {
+  init = (ERROR_MESSAGES) => {
     this.handlerInputForm = this.handlerInputForm.bind(this)
     this.submitBtn = this._form.querySelector('#search-button')
     this.alert = this._form.querySelector('.alert-message')
@@ -17,12 +17,12 @@ export default class FormValidator {
     input.setCustomValidity('')
 
     if (input.validity.tooShort || input.validity.tooLong) {
-      input.setCustomValidity(errorMessages.wrongLength)
+      input.setCustomValidity(ERROR_MESSAGES.wrongLength)
       alertElement.textContent = input.validationMessage
       return false
     }
     if (input.value.trim() === '') {
-      input.setCustomValidity(errorMessages.notOnlySpace)
+      input.setCustomValidity(ERROR_MESSAGES.notOnlySpace)
       input.value = input.value.trim()
       alertElement.textContent = input.validationMessage
       return false

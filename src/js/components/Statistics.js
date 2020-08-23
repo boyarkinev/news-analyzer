@@ -9,6 +9,9 @@ export default class Statistics extends BaseComponent {
     super(selector)
     this._dataStorage = new DataStorage
     this._headerMatchCounter = headerMatchCounter
+    this._newsData = this._dataStorage.getArticlesData()
+    this._newsKeyWord = this._dataStorage.getKeyWordData()
+    this._newsDate = this._dataStorage.getNewsDate()
   }
 
   init = () => {
@@ -16,9 +19,6 @@ export default class Statistics extends BaseComponent {
     this._matchInHeader = this._$el.querySelector('#header-counter')
     this._requestHeader = this._$el.querySelector('#request-header')
     this._month = this._$el.querySelector('#month')
-    this._newsData = this._dataStorage.getArticlesData()
-    this._newsKeyWord = this._dataStorage.getKeyWordData()
-    this._newsDate = this._dataStorage.getNewsDate()
     
     this._requestHeader.textContent = this._newsKeyWord
     this._newsPerWeek.textContent = this._newsData.length
@@ -30,7 +30,7 @@ export default class Statistics extends BaseComponent {
     this._diagramRow = `
       <li class="diagram__day">
         <p class="diagram__date">${analiticsTimeStamp(elem.date)}</p>
-        <figure class="diagram__line" style="width:${elem.count}%">
+        <figure class="diagram__line" style="width:${elem.count / this._newsData.length * 100}%">
           <figcaption class="diagram__percent">${elem.count}</figcaption>
         </figure>
       </li>
@@ -38,4 +38,9 @@ export default class Statistics extends BaseComponent {
     this._list = this._$el.querySelector('.diagram__days')
     this._list.insertAdjacentHTML('afterbegin', this._diagramRow)
   }
+
+  render = (week) => {
+    week.forEach(elem => this.diagram(elem))
+  }
+  
 }

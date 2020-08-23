@@ -1,6 +1,8 @@
 'use string'
 
-export const errorMessages = {
+export const ERROR_MESSAGES = {
   wrongLength: 'Не пожалейте для меня от 2 до 30 символов :)',
   notOnlySpace: 'Любой запрос прекрасен, если это не пробелы :)'
 }
+
+// Предупреждения для валидации поля ввода запроса

@@ -1,16 +1,16 @@
 'use strict'
 
-import NewsApiParams from '../constants/news-api-params'
+import NEWS_API_PARAMS from '../constants/NEWS_API_PARAMS'
 import {dateTo, dateFrom} from '../utils/news-date'
 
 export default class NewsApi {
 	
 	constructor() {
-		this.url = NewsApiParams.URL_NEWS_API
-		this.apiKey = NewsApiParams.KEY_NEWS_API
-		this.pageSize = NewsApiParams.PAGE_SIZE_NEWS_API
-		this.sortBy = NewsApiParams.SORT_BY_NEWS_API
-		this.language = NewsApiParams.LANGUAGE_NEWS_API
+		this.url = NEWS_API_PARAMS.URL_NEWS_API
+		this.apiKey = NEWS_API_PARAMS.KEY_NEWS_API
+		this.pageSize = NEWS_API_PARAMS.PAGE_SIZE_NEWS_API
+		this.sortBy = NEWS_API_PARAMS.SORT_BY_NEWS_API
+		this.language = NEWS_API_PARAMS.LANGUAGE_NEWS_API
 	}
 
 	getNews = (keyWord) => {

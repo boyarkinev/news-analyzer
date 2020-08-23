@@ -1,7 +1,7 @@
 'use strict'
 
 import daysList from '../constants/days-list'
-import monthsListAnalytics from '../constants/months-list-analytics';
+import monthsListAnalytics from '../constants/months-list-analytics'
 
 const date = new Date()
 

@@ -24,7 +24,6 @@ export default class DataStorage {
   }
 
   getArticlesData = () => {
-    // return JSON.parse(localStorage.getItem('articles'))
     if (localStorage.getItem('articles')) {
       return JSON.parse(localStorage.getItem('articles'))
     }
@@ -41,12 +40,4 @@ export default class DataStorage {
     return JSON.parse(localStorage.getItem('newsDate'))
   }
 
-  // checkStorage = () => {
-  //   if (localStorage.getItem('articles')) {
-  //     JSON.parse(localStorage.getItem('articles'))
-  //   }
-  //   else {
-  //     this.init()
-  //   }
-  // }
 }

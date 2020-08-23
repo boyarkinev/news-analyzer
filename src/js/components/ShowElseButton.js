@@ -1,5 +1,6 @@
 'use strict'
-import BaseComponent from './BaseComponent';
+
+import BaseComponent from './BaseComponent'
 
 export default class ShowElseButton extends BaseComponent {
   constructor (selector, showElseClickHandler) {
@@ -9,6 +10,6 @@ export default class ShowElseButton extends BaseComponent {
 
   init = () => {
     this._$el.addEventListener('click', this._showElseClickHandler)
-    return this._$el
+    // return this._$el
   }
 }

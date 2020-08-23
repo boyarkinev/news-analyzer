@@ -1,4 +1,4 @@
-const SliderParams = {
+const SLIDER_PARAMS = {
   slideClass: 'slider__slide',
   wrapperClass: 'slider__wrapper',
 
@@ -46,4 +46,4 @@ const SliderParams = {
   }
 }
 
-export default SliderParams
+export default SLIDER_PARAMS
