@@ -13,7 +13,9 @@ import Preloader from './components/Preloader'
 import NegativeSearchMessage from './components/NegativeSearchMessage'
 import FormValidator from './components/FormValidator'
 import {errorMessages} from './constants/error-messages'
-import ShowElseButton from './components/ShowElseButton';
+import ShowElseButton from './components/ShowElseButton'
+import { dateTo } from './utils/news-date'
+
 
 const searchForm = new SearchForm('#search-form', submitHandler) // Компонент инпута
 const preloader = new Preloader('#preloader') // Спиннер загрузки
@@ -25,8 +27,10 @@ const newsCardList = new NewsCardList('.search-results__list', newsCard) // Ко
 const newsApi = new NewsApi // Компонент новостного API
 const formValidator = new FormValidator(searchForm)
 const showElseButton = new ShowElseButton('#show-else', showElseClickHandler)
+const newsDate = dateTo
 
 formValidator.init(errorMessages)
+showElseButton.init()
 
 function submitHandler(event) { // Отправляем поисковую фразу
   event.preventDefault()
@@ -55,6 +59,8 @@ function storageTransfer() { // Обращаемся к серверу
       negativeSearchMessage.hide()
       dataStorage.setArticlesData(elems)
       dataStorage.setKeyWordData(keyWord)
+      dataStorage.setNewsDate(newsDate)
+      showElseButton.show()
       searchSection.show()
       newsCardList.render(elems)
       formValidator.setSubmitButtonState(true)
@@ -64,8 +70,6 @@ function storageTransfer() { // Обращаемся к серверу
     console.log(err)
   })
 }
-
-showElseButton.init()
 
 let counter = 1
 
@@ -77,12 +81,10 @@ function showElseClickHandler(event) { // Рендерим карточки на
   let start = (++counter -1) * cardsOnPage
   let end = start + cardsOnPage
   let result = cards.slice(start, end)
+  
   if (start+3 >= cards.length) {
     showElseButton.hide()
   }
-  
-  console.log(start)
-  console.log(end)
   
   newsCardList.render(result)
 }
@@ -95,7 +97,10 @@ document.addEventListener('DOMContentLoaded', event => { // Рендерим 3 �
   formValidator.resetFormAlerts()
   dataStorage.getArticlesData().length === 0 || dataStorage.getKeyWordData().length === 0 ? searchSection.hide() : searchSection.show()
   searchForm.init()
+  showElseButton.show()
   searchForm.getInput().value = dataStorage.getKeyWordData()
   newsCardList.render(dataStorage.getArticlesData().slice(0, 3))
   searchForm.getInput().value.length !== 0 ? formValidator.setSubmitButtonState(true) : formValidator.setSubmitButtonState(false)
 })
+
+console

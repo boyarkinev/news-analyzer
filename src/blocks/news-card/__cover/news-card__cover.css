@@ -1,4 +1,7 @@
 .news-card__cover {
   margin: 0;
-  background: linear-gradient(45deg, #eecfba, #c5dde8);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../../images/news-picture.jpg');
 }

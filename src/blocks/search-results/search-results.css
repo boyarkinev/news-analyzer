@@ -5,7 +5,6 @@
 @import url(./__title/search-results__title.css);
 @import url(./__text/search-results__text.css);
 @import url(./__analytics-link/search-results__analytics-link.css);
-@import url(./__container/_is-hidden/search-results__container_is-hidden.css);
 
 .search-results {
   font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;

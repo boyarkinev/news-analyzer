@@ -9,24 +9,18 @@
   box-sizing: border-box;
   border-radius: 50px;
   border: 2px solid rgba(0, 0, 0, 0.5);
-  position: absolute;
+  position: relative;
+  width: 100%;
 }
 
 .search__input:focus {
   border: 2px solid #2f71e5;
-  box-shadow: inset 0 0 8px #2f71e5;
+  /* box-shadow: inset 0 0 8px rgba(47, 113, 229, .2); */
 }
 
 @media (max-width: 768px) {
   .search__input {
     padding-top: 18px;
     padding-bottom: 18px;
-  }
-}
-
-@media (max-width: 450px) {
-  .search__input {
-    position: relative;
-    margin-bottom: 14px;
   }
 }

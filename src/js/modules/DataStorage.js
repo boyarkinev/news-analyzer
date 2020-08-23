@@ -18,6 +18,10 @@ export default class DataStorage {
   setKeyWordData = (elems) => {
     localStorage.setItem('keyWord', JSON.stringify(elems))
   }
+  
+  setNewsDate = (elems) => {
+    localStorage.setItem('newsDate', JSON.stringify(elems))
+  }
 
   getArticlesData = () => {
     // return JSON.parse(localStorage.getItem('articles'))
@@ -31,6 +35,10 @@ export default class DataStorage {
 
   getKeyWordData = () => {
     return JSON.parse(localStorage.getItem('keyWord'))
+  }
+
+  getNewsDate = () => {
+    return JSON.parse(localStorage.getItem('newsDate'))
   }
 
   // checkStorage = () => {

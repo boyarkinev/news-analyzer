@@ -1,50 +1,23 @@
 'use strict';
 
-import '../../pages/about.css';
+import '../../pages/about.css'
+import 'swiper/swiper-bundle.css'
+import Swiper from 'swiper/bundle'
+import CommitCard from '../components/CommitCard'
+import CommitCardList from '../components/CommitCardList'
+import GithubApi from '../modules/GithubApi'
+import SliderParams from '../constants/slider-params';
 
-import Swiper from 'swiper/bundle';
+const commitCard = (...args) => new CommitCard('#commit-card-template', ...args).init()
+const commitCardList = new CommitCardList('#slider-wrapper', commitCard)
+const githubApi = new GithubApi
 
-const mySwiper = new Swiper('.swiper-container', {
+githubApi.getCommits()
+  .then(res => {
+    commitCardList.render(res)
+    let slider = new Swiper('.slider__container', SliderParams)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 
-  direction: 'horizontal',
-  effect: 'slide',
-
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-
-  loop: true,
-  grabCursor: true,
-  centeredSlides: true,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    320: {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: true,
-      loop: false,
-    },
-    450: {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: false,
-    },
-    640: {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: false,
-    },
-    768: {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      centeredSlides: true,
-    },
-  }
-})

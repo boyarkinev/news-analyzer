@@ -1,9 +1,10 @@
 'use strict'
 
 const date = new Date()
-const dateTo = date.toISOString().substr(0, 10) // Дата самой новой статьи
+date.setDate(date.getDate() + 1)
+const dateTo = date.toISOString().split('T')[0] // Дата самой новой статьи
 
-date.setDate(date.getDate() - 7)
-const dateFrom = date.toISOString().substr(0, 10) // Дата самой старой статьи
+date.setDate(date.getDate() - 6)
+const dateFrom = date.toISOString().split('T')[0] // Дата самой старой статьи
 
 export {dateTo, dateFrom}

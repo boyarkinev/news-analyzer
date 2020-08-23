@@ -14,3 +14,5 @@ const monthsList = {
 }
 
 export default monthsList
+
+// Список месяцев для карточек новостей и коммитов github

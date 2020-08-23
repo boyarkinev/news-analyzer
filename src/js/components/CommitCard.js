@@ -1,7 +1,7 @@
 'use strict'
 
 import BaseComponent from './BaseComponent'
-import timeStampConvert from '../utils/time-stamp-convert'
+import {cardTimeStamp} from '../utils/time-stamp-converter'
 import githubEmailNormalyze from '../utils/github-email-normalyze'
 
 
@@ -9,7 +9,7 @@ export default class CommitCard extends BaseComponent {
   constructor(selector, elem) {
     super(selector)
     this._elem = elem
-    this._timeStampConvert = timeStampConvert
+    this._cardTimeStamp = cardTimeStamp
     this._emailNormalyze = githubEmailNormalyze
     this._date = elem.commit.committer.date
     this._avatar = elem.author.avatar_url
@@ -20,15 +20,14 @@ export default class CommitCard extends BaseComponent {
 
   init = () => {
     this._card = this._$el.content.cloneNode(true)
-    this._card.querySelector('.commit-card__date').textContent = this._timeStampConvert(this._date)
+    this._card.querySelector('.commit-card__date').textContent = this._cardTimeStamp(this._date)
     this._card.querySelector('.commit-card__userpic').src = this._avatar
     this._card.querySelector('.commit-card__usename').textContent = this._name
     this._card.querySelector('.commit-card__email').textContent = this._emailNormalyze(this._email)
     this._card.querySelector('.commit-card__text').textContent = this._text
 
     // if (this._name === 'GitHub') {
-    //   this._card.querySelector('.commit-card__userpic').src = `${"<%=require('./images/github-logo.png').default%>"}`
-    //   // "https://image.flaticon.com/icons/svg/25/25231.svg"
+    //   this._card.querySelector('.commit-card__userpic').src = "https://image.flaticon.com/icons/svg/25/25231.svg"
     // } else {
     //   this._card.querySelector('.commit-card__userpic').src = this._avatar
     // }

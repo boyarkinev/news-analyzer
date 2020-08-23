@@ -1,14 +1,10 @@
+@import url(./_width/section__title_width.css);
+
 .section__title {
   font-size: 40px;
   line-height: 46px;
   font-weight: normal;
   margin: 0;
-}
-
-@media (max-width: 1200px) {
-  .section__title {
-    max-width: 60%;
-  }
 }
 
 @media (max-width: 840px) {
@@ -23,6 +19,5 @@
     font-size: 30px;
     line-height: 38px;
     margin-bottom: 0;
-    max-width: 100%;
   }
 }
