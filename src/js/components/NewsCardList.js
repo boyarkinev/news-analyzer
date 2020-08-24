@@ -14,7 +14,8 @@ export default class NewsCardList extends BaseComponent {
   }
 
   render = (elems) => {
-    elems.slice(0, 3).forEach(elem => this.init(elem))
+    const cardsShown = 3
+    elems.slice(0, cardsShown).forEach(elem => this.init(elem))
   }
 
   clearing = () => {

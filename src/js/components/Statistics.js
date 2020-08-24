@@ -39,8 +39,8 @@ export default class Statistics extends BaseComponent {
     this._list.insertAdjacentHTML('afterbegin', this._diagramRow)
   }
 
-  render = (week) => {
-    week.forEach(elem => this.diagram(elem))
+  render = (weeks) => {
+    weeks.forEach(elem => this.diagram(elem))
   }
   
 }

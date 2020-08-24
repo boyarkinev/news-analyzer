@@ -13,7 +13,7 @@ export default class CommitCardList extends BaseComponent {
     this._$el.append(card)
   }
 
-  render = (res) => {
-    res.forEach(elem => this.init(elem))
+  render = (cards) => {
+    cards.forEach(elem => this.init(elem))
   }
 }

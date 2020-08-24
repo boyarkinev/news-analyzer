@@ -6,24 +6,24 @@ import DataStorage from '../modules/DataStorage'
 
 (function () {
   
-  const week = []
+  const weeks = []
   const dataStorage = new DataStorage
-  const data = dataStorage.getArticlesData()
-  const statistics = new Statistics('#statistic', headerMatchCounter, week)
+  const storageNewsData = dataStorage.getArticlesData()
+  const statistics = new Statistics('#statistic', headerMatchCounter, weeks)
   
   // Создаем массив дат за неделю
   const date = new Date(dataStorage.getNewsDate())
   date.setDate(date.getDate())
-  week.push({date: date.toISOString().split('T')[0], count:0})
+  weeks.push({date: date.toISOString().split('T')[0], count:0})
   for (let i = 0; i < 6; i++) {
     date.setDate(date.getDate() - 1)
     const day = date.toISOString().split('T')[0]
-    week.push({date: day, count:0})
+    weeks.push({date: day, count:0})
   }
   
   function headerMatchCounter() { // Считаем упоминания в заголовках
     let counter = 0
-    for (let elem of data) {
+    for (let elem of storageNewsData) {
       if (elem.title.includes(dataStorage.getKeyWordData())) {
         counter++
       }
@@ -31,7 +31,7 @@ import DataStorage from '../modules/DataStorage'
     return counter
   }
   
-  data.reduce((acc, el) => { // Собираем массив данных для статистики
+  storageNewsData.reduce((acc, el) => { // Собираем массив данных для статистики
     
     acc.forEach(element => {
       if (element.date === el.publishedAt.split('T')[0]) {
@@ -39,9 +39,9 @@ import DataStorage from '../modules/DataStorage'
       }
     })
     return acc
-  },week)
+  },weeks)
   
-  statistics.render(week)
+  statistics.render(weeks)
   statistics.init()
 
 })()

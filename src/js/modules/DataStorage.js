@@ -6,7 +6,7 @@ export default class DataStorage {
   }
 
   init = () => {
-    let storageArray = []
+    const storageArray = []
     localStorage.setItem('articles', JSON.stringify(storageArray))
     localStorage.setItem('keyWord', JSON.stringify(storageArray))
   }
