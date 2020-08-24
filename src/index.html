@@ -10,16 +10,16 @@
   <title>NewsAnalyzer</title>
   <link rel="shortcut icon" href="<%=require('./images/favico.svg').default%>">
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
-  <script defer src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.js %>" defer></script>
 </head>
 
 <body>
-  <div class="root">
+  <section class="root">
     <header class="header header_background header_white-text">
 
-      <!-- Навигация по сайту/ -->
+      <!-- Навигация по сайту / -->
       <div class="header__nav container container_centered">
-        <p class="logo ">NewsAnalyzer</p>
+        <p class="logo">NewsAnalyzer</p>
         <nav>
           <ul class="header__nav-items">
             <li class="header__nav-item">
@@ -31,137 +31,64 @@
           </ul>
         </nav>
       </div>
-      <!-- /Навигация по сайту -->
+      <!-- / Навигация по сайту -->
 
       <div class="selector"></div>
 
-      <!-- Поисковая форма/ -->
+      <!-- Поисковая форма / -->
       <div class="search">
         <div class="search__container section">
           <h1 class="main-title">Что в мире творится?</h1>
           <p class="search__lead">Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.</p>
-          <form class="search__elements">
-            <input type="text" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30" required>
-            <button type="submit" class="button button_blue">Искать</button>
+          <form class="search__elements" id="search-form" novalidate>
+            <input type="text" id="search-input" class="search__input" placeholder="Введите тему новости" minlength="2" maxlength="30">
+            <button type="submit" id="search-button" class="button button_blue">Искать</button>
+            <span id="alert" class="alert-message"></span>
           </form>
         </div>
       </div>
-      <!-- /Поисковая форма -->
+      <!-- / Поисковая форма -->
 
     </header>
 
     <main class="main">
 
-      <!-- Результат поиска/ -->
-
-      <section class="search-results section section_colored">
+      <section id="preloader" class="search-results section section_colored hide">
         <div class="search-results__container">
           <i class="search-results__preloader"></i>
           <p class="search-results__text">Идет поиск новостей...</p>
         </div>
       </section>
-      
-      <section class="search-results section section_colored">
+
+      <section id="negative-search-message" class="search-results section section_colored hide">
         <div class="search-results__container">
           <figure class="search-results__negative-pic"></figure>
-          <h3 class="search-results__title">Ничего не найдено</h3>
-          <p class="search-results__text">К сожалению, по вашему запросу ничего не найдено.</p>
+          <h3 id="negative-answer-header" class="search-results__title">Ничего не найдено</h3>
+          <p id="negative-answer-text" class="search-results__text">К сожалению, по вашему запросу ничего не найдено.</p>
         </div>
       </section>
+
+      <!-- Результат поиска / -->
       
-      <section class="search-results section section_colored">        
+      <section id="search-section" class="search-results section section_colored hide">
+
         <div class="search-results__container container container_centered">
-          <div class="section__container section__container_analytics">
+          <div class="section__container section__container_analytics ">
             <h2 class="section__title">Результаты поиска</h2>
             <a href="./analytics.html" class="search-results__analytics-link">
               Посмотреть&nbsp;аналитику</a>
           </div>
+
           <ul class="search-results__list">
-            <li class="news-card">
-              <a href="https://lenta.ru" target="_blank" class="news-card__link">
-                <img src="<%=require('./images/image_08.jpg').default%>" alt="Обложка"  class="news-card__cover">
-                <div class="news-card__description">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <div class="news-card__paragraph">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                    <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-                  </div>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </a>
-            </li>
-            <li class="news-card">
-              <a href="https://meduza.io" target="_blank" class="news-card__link">
-                <img src="<%=require('./images/image_04.jpg').default%>" alt="Обложка"  class="news-card__cover">
-                <div class="news-card__description">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <div class="news-card__paragraph">
-                    <h3 class="news-card__title">Лесные огоньки: история одной фотографии</h3>
-                    <p class="news-card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-                  </div>
-                  <p class="news-card__source">Медуза</p>
-                </div>
-              </a>
-            </li>
-            <li class="news-card">
-              <a href="https://ria.ru" target="_blank" class="news-card__link">
-                <img src="<%=require('./images/image_07.jpg').default%>" alt="Обложка"  class="news-card__cover">
-                <div class="news-card__description">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <div class="news-card__paragraph">
-                    <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-                    <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-                  </div>
-                  <p class="news-card__source">РИА</p>
-                </div>
-              </a>
-            </li>
-            <li class="news-card">
-              <a href="https://yandex.ru" target="_blank" class="news-card__link">
-                <img src="<%=require('./images/image_06.jpg').default%>" alt="Обложка"  class="news-card__cover">
-                <div class="news-card__description">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <div class="news-card__paragraph">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                    <p class="news-card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-                  </div>
-                  <p class="news-card__source">Дзен</p>
-                </div>
-              </a>
-            </li>
-            <li class="news-card">
-              <a href="https://zona.media" target="_blank" class="news-card__link">
-                <img src="<%=require('./images/image_05.jpg').default%>" alt="Обложка"  class="news-card__cover">
-                <div class="news-card__description">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <div class="news-card__paragraph">
-                    <h3 class="news-card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-                    <p class="news-card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-                  </div>
-                  <p class="news-card__source">Медиазона</p>
-                </div>
-              </a>
-            </li>
-            <li class="news-card">
-              <a href="http://mag.afisha.ru" target="_blank" class="news-card__link">
-                <img src="<%=require('./images/image_01.jpg').default%>" alt="Обложка"  class="news-card__cover">
-                <div class="news-card__description">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <div class="news-card__paragraph">
-                    <h3 class="news-card__title">Лесные огоньки: история одной фотографии</h3>
-                    <p class="news-card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-                  </div>
-                  <p class="news-card__source">Афиша</p>
-                </div>
-              </a>
-            </li>
+            
           </ul>
-          <button type="submit" class="button button_white">Показать еще</button>
+          
+          <button type="submit" id="show-else" class="button button_white hide" onclick="scroll(0, 100)">Показать еще</button>
         </div>
       </section>
-      <!-- /Результат поиска -->
+      <!-- / Результат поиска -->
 
-      <!-- Об авторе/ -->
+      <!-- Об авторе / -->
       <section class="info section container container_left-shift">
 
         <picture class="info__pic">
@@ -192,7 +119,7 @@
           </p>
         </div>
       </section>
-      <!-- /Об авторе -->
+      <!-- / Об авторе -->
 
     </main>
 
@@ -202,7 +129,7 @@
 
         <p class="footer__copyright">©&nbsp;2020&nbsp;Евгений&nbsp;Бояркин</p>
 
-        <!-- Навигация по сайту/ -->
+        <!-- Навигация по сайту / -->
         <nav class="footer__nav">
           <ul class="footer__nav-items">
             <li class="footer__nav-item">
@@ -216,24 +143,44 @@
             </li>
           </ul>
         </nav>
-        <!-- /Навигация по сайту -->
+        <!-- / Навигация по сайту -->
 
-        <!-- Ссылки на соцсети/ -->
+        <!-- Ссылки на соцсети / -->
         <ul class="social">
           <li class="social__item">
-            <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank"></a>
+            <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank" rel="noopener"></a>
           </li>
           <li class="social__item">
-            <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank"></a>
+            <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank" rel="noopener"></a>
           </li>
         </ul>
-        <!-- /Ссылки на соцсети -->
+        <!-- / Ссылки на соцсети -->
 
       </div>
 
     </footer>
 
-  </div>
+    <!-- Темплейт карточки / -->
+    <template id="news-card-template">
+      <li class="news-card">
+        <a href="#" target="_blank" class="news-card__link">
+          <figure class="news-card__cover">
+            <div class="news-card__image"></div>
+          </figure>
+          <div class="news-card__description">
+            <p class="news-card__date"></p>
+            <div class="news-card__paragraph">
+              <h3 class="news-card__title"></h3>
+              <p class="news-card__text"></p>
+            </div>
+            <p class="news-card__source"></p>
+          </div>
+        </a>
+      </li>
+    </template>
+    <!-- / Темплейт карточки -->
+
+  </section>
 </body>
 
 </html>

@@ -10,32 +10,40 @@
   font-family: 'Roboto Slab', 'Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
   min-height: 288px;
   height: 100%;
   border-radius: 16px;
   background-color: #fff;
   padding: 24px;
   box-sizing: border-box;
+  /* margin-right: 16px; */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  position: relative;
 }
+
+/* .commit-card:last-of-type {
+  margin-right: 0;
+} */
 
 @media (max-width: 768px) {
   .commit-card {
-    max-width: 336px;
+    width: 336px;
     min-height: 242px;
+    margin: 0 8px;
   }
 }
 
 @media (max-width: 320px) {
   .commit-card {
-    max-width: 288px;
+    width: 288px;
     min-height: 264px;
   }
 }
 
 @media (max-width: 320px) {
   .commit-card:first-of-type {
-    margin-left: 16px;
+    margin: 0 4px;
   }
 }

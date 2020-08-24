@@ -2,6 +2,7 @@
   padding-left: 54px;
   padding-right: 54px;
   background-color: #2f71e5;
+  position: absolute;
 }
 
 .button_blue:hover {
@@ -16,4 +17,11 @@
 .button_blue:focus {
   box-shadow: 0 0 3px #fff;
   border-color: #fff;
+}
+
+@media (max-width: 450px) {
+  .button_blue {
+    position: relative;
+    margin-top: 14px;
+  }
 }

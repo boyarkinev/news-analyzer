@@ -1,3 +1,5 @@
+@import url(./_bold/result__text_bold.css);
+
 .result__text {
   font-family: 'Roboto';
   font-size: 18px;

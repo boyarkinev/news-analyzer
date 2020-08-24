@@ -8,13 +8,13 @@
   <title>NewsAnalyzer. About</title>
   <link rel="shortcut icon" href="<%=require('./images/favico.svg').default%>">
   <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
-  <script defer src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.js %>" defer></script>
 </head>
 <body>
   <div class="root">
     <header class="header">
 
-      <!-- Навигация по сайту/ -->
+      <!-- Навигация по сайту / -->
       <div class="header__nav container container_centered">
         <p class="logo ">NewsAnalyzer</p>
         <nav>
@@ -28,13 +28,13 @@
           </ul>
         </nav>
       </div>
-      <!-- /Навигация по сайту -->
+      <!-- / Навигация по сайту -->
 
       <div class="selector"></div>
   </header>
     <main class="main">
 
-      <!-- О проекте/ -->
+      <!-- О проекте / -->
       <section class="info section container container_centered">
         <div class="info__paragraph">
           <h2 class="section__title">Клиентам</h2>
@@ -45,9 +45,9 @@
           <p class="info__text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
         </div>
       </section>
-      <!-- /О проекте -->
+      <!-- / О проекте -->
 
-      <!-- Стэк технолигий/ -->
+      <!-- Стэк технолигий / -->
       <section class="stack section section_colored">
         <div class="stack__container container container_left-shift">
           <h2 class="section__title">Используемые технологии</h2>
@@ -71,9 +71,9 @@
           </div>
         </div>
       </section>
-      <!-- /Стэк технолигий -->
+      <!-- / Стэк технолигий -->
 
-      <!-- Секция об авторе/ -->
+      <!-- Секция об авторе / -->
       <section class="info section container container_left-shift">
 
         <picture class="info__pic">
@@ -94,85 +94,53 @@
           </p>
         </div>
       </section>
-      <!-- /Секция об авторе -->
+      <!-- / Секция об авторе -->
 
-      <!-- Коммиты с гитхаба/ -->
+      <!-- Коммиты с гитхаба / -->
       <section class="github section section_colored">
         <div class="section__container section__container_github container container_centered">
-          <h3 class="section__title">История коммитов из&nbsp;GitHub</h3>
+          <h3 class="section__title section__title_width">История коммитов из&nbsp;GitHub</h3>
             <a href="https://github.com/boyarkinev" target="_blank" class="github__link">
               <span class="github__link-text">Открыть&nbsp;в&nbsp;Github</span>
               <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5856 12.0001L8.29274 17.293L9.70696 18.7072L16.4141 12.0001L9.70696 5.29297L8.29274 6.70718L13.5856 12.0001Z' fill='%231A1B22'/%3E%3C/svg%3E%0A" alt="Стрелка" class="github__link-arrow">
             </a>
         </div>
 
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-              <!-- <div class="swiper-slide"> -->
-                <div class="swiper-slide commit-card">
-                  <p class="commit-card__date">14 августа, 2019</p>
-                  <div class="commit-card__header">
-                    <img src="<%=require('./images/boy.jpg').default%>" alt="Аватар пользователя" class="commit-card__userpic">
-                    <div class="commit-card__person">
-                      <h3 class="commit-card__usename">Дамир Вахитов</h3>
-                      <p class="commit-card__email">damir@yandex.ru</p>
-                    </div>
-                  </div>
-                  <p class="commit-card__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="swiper-slide"> -->
-                <div class="swiper-slide commit-card">
-                  <p class="commit-card__date">14 августа, 2019</p>
-                  <div class="commit-card__header">
-                    <img src="<%=require('./images/girl.jpg').default%>" alt="Аватар пользователя" class="commit-card__userpic">
-                    <div class="commit-card__person">
-                      <h3 class="commit-card__usename">Нина Назарова</h3>
-                      <p class="commit-card__email">nina@yandex.ru</p>
-                    </div>
-                  </div>
-                  <p class="commit-card__text">You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open Tools > Plugins > Available plugins and find and install Emmet plugin.</p>
-                <!-- </div> -->
-              </div>
-              <!-- <div class="swiper-slide"> -->
-                <div class="swiper-slide commit-card">
-                  <p class="commit-card__date">14 августа, 2019</p>
-                  <div class="commit-card__header">
-                    <img src="<%=require('./images/boy.jpg').default%>" alt="Аватар пользователя" class="commit-card__userpic">
-                    <div class="commit-card__person">
-                      <h3 class="commit-card__usename">Пётр Колесников</h3>
-                      <p class="commit-card__email">kolesnikov@yandex.ru</p>
-                    </div>
-                  </div>
-                  <p class="commit-card__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="swiper-slide"> -->
-                <div class="swiper-slide commit-card">
-                  <p class="commit-card__date">14 августа, 2019</p>
-                  <div class="commit-card__header">
-                    <img src="<%=require('./images/boy.jpg').default%>" alt="Аватар пользователя" class="commit-card__userpic">
-                    <div class="commit-card__person">
-                      <h3 class="commit-card__usename">Слава Юматов</h3>
-                      <p class="commit-card__email">yumatov@yandex.ru</p>
-                    </div>
-                  </div>
-                  <p class="commit-card__text">Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.</p>
-                </div>
-              <!-- </div> -->
+        <section id="negative-search-message" class="search-results section section_colored hide">
+          <div class="search-results__container">
+            <figure class="search-results__negative-pic"></figure>
+            <h3 id="negative-answer-header" class="search-results__title">Ничего не найдено</h3>
+            <p id="negative-answer-text" class="search-results__text">К сожалению, по вашему запросу ничего не найдено.</p>
           </div>
-          
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-        </div>
-          <div class="swiper-pagination__container">
-            <div class="swiper-pagination"></div>
-          </div>
+        </section>
         
-        <a href="https://github.com/boyarkinev" target="_blank" class="github__button">Открыть в GitHub</a>
+        <div class="slider">
+          <div class="slider__container">
+            <div id="slider-wrapper" class="slider__wrapper">
+              <!-- Шаблон карточки /-->
+              <template id="commit-card-template">
+                <div class="commit-card slider__slide">
+                  <p class="commit-card__date"></p>
+                  <div class="commit-card__header">
+                    <img src="#" alt="Userpic" class="commit-card__userpic">
+                    <div class="commit-card__person">
+                      <h3 class="commit-card__usename"></h3>
+                      <p class="commit-card__email"></p>
+                    </div>
+                  </div>
+                  <p class="commit-card__text"></p>
+                </div>
+              </template>
+              <!--/ Шаблон карточки -->
+            </div> 
+            <div class="slider__pagination"></div>
+            <div class="slider__button slider__button_prev"></div>
+            <div class="slider__button slider__button_next"></div>
+          </div>
+        </div>
+        <a href="https://github.com/boyarkinev" target="_blank" class="github__button" rel="noopener">Открыть в GitHub</a>
       </section>
-      <!-- /Коммиты с гитхаба -->
+      <!-- / Коммиты с гитхаба -->
 
     </main>
 
@@ -182,7 +150,7 @@
 
         <p class="footer__copyright">©&nbsp;2020&nbsp;Евгений&nbsp;Бояркин</p>
         
-        <!-- Навигация по сайту/ -->
+        <!-- Навигация по сайту / -->
         <nav class="footer__nav">
           <ul class="footer__nav-items">
             <li class="footer__nav-item">
@@ -192,22 +160,22 @@
               <a href="./about.html" class="footer__nav-link">О&nbsp;проекте</a>
             </li>
             <li class="footer__nav-item">
-              <a href="https://praktikum.yandex.ru/" class="footer__nav-link" target="_blank">Яндекс.Практикум</a>
+              <a href="https://praktikum.yandex.ru/" class="footer__nav-link" target="_blank" rel="noopener">Яндекс.Практикум</a>
             </li>
           </ul>
         </nav>
-        <!-- /Навигация по сайту -->
+        <!-- / Навигация по сайту -->
   
-        <!-- Ссылки на соцсети/ -->
+        <!-- Ссылки на соцсети / -->
         <ul class="social">
           <li class="social__item">
-            <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank"></a>
+            <a href="https://github.com/boyarkinev" class="social__ico social__ico_github" target="_blank" rel="noopener" title="GitHub"></a>
           </li>
           <li class="social__item">
-            <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank"></a>
+            <a href="https://www.facebook.com/boyarkinev" class="social__ico social__ico_fb" target="_blank" rel="noopener" title="Facbook"></a>
           </li>
         </ul>
-        <!-- /Ссылки на соцсети -->
+        <!-- / Ссылки на соцсети -->
 
       </div>
 

@@ -1,50 +1,26 @@
-'use strict';
+'use strict'
 
-import '../../pages/about.css';
+import '../../pages/about.css'
+import 'swiper/swiper-bundle.css'
+import Swiper from 'swiper/bundle'
+import CommitCard from '../components/CommitCard'
+import CommitCardList from '../components/CommitCardList'
+import GithubApi from '../modules/GithubApi'
+import SLIDER_PARAMS from '../constants/SLIDER_PARAMS'
 
-import Swiper from 'swiper/bundle';
+(function () {
 
-const mySwiper = new Swiper('.swiper-container', {
+const commitCard = (...args) => new CommitCard('#commit-card-template', ...args).init()
+const commitCardList = new CommitCardList('#slider-wrapper', commitCard)
+const githubApi = new GithubApi
 
-  direction: 'horizontal',
-  effect: 'slide',
+githubApi.getCommits() // Получаем данные с сервера github, рендерим в слайдер
+  .then(res => {
+    commitCardList.render(res)
+    const slider = new Swiper('.slider__container', SLIDER_PARAMS)
+  })
+  .catch((err) => {
+    alert(err)
+  })
 
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-
-  loop: true,
-  grabCursor: true,
-  centeredSlides: true,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    320: {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: true,
-      loop: false,
-    },
-    450: {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: false,
-    },
-    640: {
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      centeredSlides: false,
-    },
-    768: {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      centeredSlides: true,
-    },
-  }
-})
+})()
