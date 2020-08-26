@@ -99,7 +99,6 @@ import { dateTo } from './utils/news-date'
     newsCardList.render(dataStorage.getArticlesData().slice(0, 3))
     searchForm.getInput().value.length !== 0 ? formValidator.setSubmitButtonState(true) : formValidator.setSubmitButtonState(false)
   })
-  document.querySelector('.main').scrollIntoView();
   showElseButton.init()
 
 })()
