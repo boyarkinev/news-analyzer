@@ -16,6 +16,7 @@ const SLIDER_PARAMS = {
   slidesPerView: 'auto',
   spaceBetween: 16,
   slidesOffsetBefore: 8,
+  centeredSlides: true,
 
   pagination: {
     el: '.slider__pagination',
@@ -30,7 +31,6 @@ const SLIDER_PARAMS = {
       spaceBetween: 8,
       centeredSlides: true,
       slidesOffsetBefore: 0,
-      
     },
     540: {
       spaceBetween: 8,

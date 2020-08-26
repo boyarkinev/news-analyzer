@@ -1,5 +1,3 @@
-'use strict'
-
 function newsTextCorrection (text) {
   if (text === null) {
     return 'Описание отсутствует'

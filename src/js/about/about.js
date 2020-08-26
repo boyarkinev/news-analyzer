@@ -1,5 +1,3 @@
-'use strict'
-
 import '../../pages/about.css'
 import 'swiper/swiper-bundle.css'
 import Swiper from 'swiper/bundle'

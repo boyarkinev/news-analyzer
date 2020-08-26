@@ -1,5 +1,3 @@
-'use strict'
-
 import BaseComponent from './BaseComponent'
 
 export default class CommitCardList extends BaseComponent {
@@ -14,6 +12,6 @@ export default class CommitCardList extends BaseComponent {
   }
 
   render = (cards) => {
-    cards.forEach(elem => this.init(elem))
+    cards.slice(0, 10).forEach(elem => this.init(elem))
   }
 }

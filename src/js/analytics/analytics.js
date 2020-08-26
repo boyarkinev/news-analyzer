@@ -1,5 +1,3 @@
-'use strict'
-
 import '../../pages/analytics.css'
 import Statistics from '../components/Statistics'
 import DataStorage from '../modules/DataStorage'

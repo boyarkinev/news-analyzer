@@ -1,5 +1,3 @@
-'use strict'
-
 import GITHUB_API_PARAMS from '../constants/GITHUB_API_PARAMS'
 
 export default class GithubApi {

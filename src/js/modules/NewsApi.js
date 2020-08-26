@@ -1,5 +1,3 @@
-'use strict'
-
 import NEWS_API_PARAMS from '../constants/NEWS_API_PARAMS'
 import {dateTo, dateFrom} from '../utils/news-date'
 
