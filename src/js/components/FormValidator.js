@@ -1,4 +1,3 @@
-'use strict'
 import {ERROR_MESSAGES} from '../constants/ERROR_MESSAGES'
 export default class FormValidator {
   constructor(form) {

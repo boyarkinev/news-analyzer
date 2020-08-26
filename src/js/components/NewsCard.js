@@ -1,5 +1,3 @@
-'use strict'
-
 import BaseComponent from './BaseComponent'
 import {cardTimeStamp} from '../utils/time-stamp-converter'
 import newsTextCorrection from '../utils/news-text-correction'

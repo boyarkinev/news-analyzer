@@ -1,5 +1,3 @@
-'use strict'
-
 import MONTHS_LIST from '../constants/MONTHS_LIST'
 import DAYS_LIST from '../constants/DAYS_LIST'
 import MONTHS_LIST_ALALYTICS from '../constants/MONTHS_LIST_ALALYTICS'

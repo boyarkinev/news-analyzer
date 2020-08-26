@@ -1,5 +1,3 @@
-'use strict'
-
 import BaseComponent from './BaseComponent'
 import DataStorage from '../modules/DataStorage'
 import {analiticsTimeStamp, analiticsMonthStamp} from '../utils/time-stamp-converter'

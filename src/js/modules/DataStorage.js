@@ -1,5 +1,3 @@
-'use strict'
-
 export default class DataStorage {
   constructor (storageTransfer) {
     this._storageTransfer = storageTransfer
